@@ -1,19 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=Unica+One&display=swap');
+
 :root {
-    --black: #000000;
-    --grey: #2D2D2D;
+    --black: #131119;
+    --grey: #1D1928;
     --white: #FFFFFF;
     --radius: 16px;
     --gutter: 8px;
+    --font-mono: "Azeret Mono", monospace;
+    --font-serif: "Instrument Serif", serif;
+    --font-size: 16px;
+    --weight-regular: 300;
 }
 
 /* mobile-first */
+
+    /* text */
+
+    p {
+        font-family: var(--font-mono);
+        font-size: var(--font-size);
+        font-weight: var(--weight-regular);
+        padding-bottom: var(--gutter);
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    strong {
+        font-weight: calc(var(--weight-regular)*2);
+    }
+
+    h1 {
+        font-family: var(--font-serif);
+        font-size: calc(var(--font-size)*10);
+    }
+
+    #intro h1 {
+        font-family: "Unica One", sans-serif;
+        font-weight: 100;
+        font-size: 325px;
+        letter-spacing: -45px;
+    }
+
+    #intro p  {
+        font-family: var(--font-serif);
+        font-size: calc(var(--font-size)*2);
+        font-weight: var(--weight-regular);
+        padding-bottom: var(--gutter);
+    }
+
+    /* sections */
 
     html {
         background-color: var(--black);
         color: var(--white);
     }
 
-    main {
+    body {
+        padding: 10% 10% 5% 10%;
+    }
+
+    .intro {
         padding: var(--gutter);
     }
 
@@ -31,18 +79,49 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        font-family: var(--font-mono);
+        font-size: var(--font-size);
+        font-weight: var(--weight-regular);
     }    
+
+    header section {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gutter);
+    }
+
+    /* components */
+
+    div {
+        padding: var(--gutter) calc(var(--gutter)*2) var(--gutter) calc(var(--gutter)*2);
+        border: 1px solid var(--white);
+        color: var(--white);
+        font-family: var(--font-mono);
+        font-size: var(--font-size);
+        font-weight: var(--weight-regular);
+        max-width: fit-content;
+    }
 
 /* desktop */
 
     @media (min-width: 768px) {
-        main {
+
+        /* sections */
+
+        .intro {
             display: grid;
             grid-template-columns: repeat(14, 1fr);
             grid-template-rows: repeat(14, 1fr);
             gap: var(--gutter);
             height: 95vh;
         }    
+
+        #intro > section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: calc(var(--gutter)*8);
+        }
 
         /* playing with the grid */
 
@@ -118,6 +197,10 @@
             cursor: pointer;
             transform: scale(1.05);
             transition: 0.2s ease-in-out;
+        }
+
+        #intro img {
+            max-height: 100%;
         }
 
     }
