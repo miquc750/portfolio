@@ -17,10 +17,10 @@
         padding: var(--gutter);
     }
 
-    section {
+    button {
         background-color: var(--grey);
         border-radius: var(--radius);
-        padding: var(--gutter);
+        padding: calc(var(--gutter)*3);
     }
 
     footer {
@@ -31,8 +31,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-    }
-
+    }    
 
 /* desktop */
 
@@ -45,23 +44,80 @@
             height: 95vh;
         }    
 
-        .collapsedwh {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
+        /* playing with the grid */
 
-        .collapsedh {
+        .intro button:first-of-type, 
+        .cv button:nth-of-type(2), 
+        .project1 button:nth-of-type(3),
+        .project2 button:nth-of-type(4),
+        .project3 button:nth-of-type(5),
+        .project4 button:nth-of-type(6),
+        .project5 button:nth-of-type(7),
+        .play button:nth-of-type(8),
+        .contact button:nth-of-type(9)  {
             grid-column: span 12;
-            grid-row: span 1;
+            grid-row: span 12;
         }
 
-        .collapsedw {
+        .intro button:nth-of-type(2),
+        .intro button:nth-of-type(3)
+        .cv button:first-of-type,
+        .cv button:nth-of-type(3),
+        .project1 button:first-of-type,
+        .project1 button:nth-of-type(2),
+        .project2 button:nth-of-type(5),
+        .project2 button:nth-of-type(6),
+        .project3 button:nth-of-type(4),
+        .project3 button:nth-of-type(6),
+        .project4 button:nth-of-type(4),
+        .project4 button:nth-of-type(5),
+        .project5 button:nth-of-type(8),
+        .project5 button:nth-of-type(9),
+        .play button:nth-of-type(7),
+        .play button:nth-of-type(9),
+        .contact button:nth-of-type(7),
+        .contact button:nth-of-type(8) {
             grid-column: span 1;
             grid-row: span 12;
         }
 
-        .large {
+        .intro button:nth-of-type(4),
+        .intro button:nth-of-type(7)
+        /* update
+        .cv button:nth-of-type(7),
+        .cv button:nth-of-type(3),
+        .project1 button:first-of-type,
+        .project1 button:nth-of-type(2),
+        .project2 button:nth-of-type(5),
+        .project2 button:nth-of-type(6),
+        .project3 button:nth-of-type(4),
+        .project3 button:nth-of-type(6),
+        .project4 button:nth-of-type(4),
+        .project4 button:nth-of-type(5),
+        .project5 button:nth-of-type(8),
+        .project5 button:nth-of-type(9),
+        .play button:nth-of-type(7),
+        .play button:nth-of-type(9),
+        .contact button:nth-of-type(7),
+        .contact button:nth-of-type(8) */ {
             grid-column: span 12;
-            grid-row: span 12;
+            grid-row: span 1;
         }
+
+        .intro button:nth-of-type(5),
+        .intro button:nth-of-type(6),
+        .intro button:nth-of-type(8),
+        .intro button:nth-of-type(9) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        /* components */
+        
+        button:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: 0.2s ease-in-out;
+        }
+
     }

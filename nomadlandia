@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <head>
+        <title>Cristina Miquel Garrido / Nomadlandia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="assets/reset.css" rel="stylesheet">
+		<link href="assets/style.css" rel="stylesheet">
+        <script defer src="main.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <h1>Nomadlandia</h1>
+            <section>
+                <div>coding</div>
+                <div>branding</div>
+            </section>
+            <section>
+                <div>April 2023</div>
+            </section>
+        </header>
+
+        <main>
+            <p>Nomadlandia is my final project for the course on Typography and Interaction in my Master's Program at Parsons School of Design.</p>            
+            <p>Since COVID-19, digital nomadism has been on the rise, encouraged by work-from-home policies. Spain, as a country with high levels of well-being and quality of life standards, has been chosen by many as their destination. However, moving abroad is not always easy. Doing so with advice and recommendations from locals can make the process much smoother. That is why Nomadlandia was created.</p>            
+            <p>The platform integrates HTML, CSS, and JavaScript in a frontend that is connected to a database in JSON format. The script identifies the URL slug and matches it to the corresponding “city” key in the JSON items, to display information specific to the chosen Spanish city. The methodology used in this project was "code-based design," training visuals without any design tool, but rather sketching directly in code.</p>           
+        </main>
+
+        <footer>Crafted & coded by Cristina Miquel</footer>
+    </body>
+</html>
