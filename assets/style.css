@@ -16,13 +16,6 @@
 
     /* text */
 
-    p {
-        font-family: var(--font-mono);
-        font-size: var(--font-size);
-        font-weight: var(--weight-regular);
-        padding-bottom: var(--gutter);
-    }
-
     em {
         font-style: italic;
     }
@@ -34,21 +27,34 @@
     h1 {
         font-family: var(--font-serif);
         font-size: calc(var(--font-size)*10);
+        line-height: 1;
     }
 
-    #intro h1 {
-        font-family: "Unica One", sans-serif;
-        font-weight: 100;
-        font-size: 325px;
-        letter-spacing: -45px;
-    }
+        #intro h1 {
+            font-family: "Unica One", sans-serif;
+            font-weight: 100;
+            font-size: 325px;
+            letter-spacing: -45px;
+        }
 
-    #intro p  {
+    h2 {
         font-family: var(--font-serif);
-        font-size: calc(var(--font-size)*2);
+        font-size: calc(var(--font-size)*4);
+    }
+
+    p {
+        font-family: var(--font-mono);
+        font-size: var(--font-size);
         font-weight: var(--weight-regular);
         padding-bottom: var(--gutter);
     }
+
+        #intro p  {
+            font-family: var(--font-serif);
+            font-size: calc(var(--font-size)*2);
+            font-weight: var(--weight-regular);
+            padding-bottom: var(--gutter);
+        }
 
     /* sections */
 
@@ -63,12 +69,6 @@
 
     .intro {
         padding: var(--gutter);
-    }
-
-    button {
-        background-color: var(--grey);
-        border-radius: var(--radius);
-        padding: calc(var(--gutter)*3);
     }
 
     footer {
@@ -90,7 +90,52 @@
         gap: var(--gutter);
     }
 
+    .tldr {
+        border: solid 1px var(--white);
+        padding: 5%;
+        gap: 15%;
+        display: flex;
+        flex-direction: row;
+    }
+
+        .tldr > section {
+            display: flex;
+            flex-direction: column;
+        }
+    
+    .project-description {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--gutter)*2);
+        line-height: 1.5;
+    }
+
     /* components */
+
+    header img {
+        max-width: 100%;
+        max-height: 20rem;
+        object-fit: contain;
+        animation: cover 3s ease-in infinite;
+    }
+
+        @keyframes cover {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(-64px, 64px);
+            }
+            50% {
+                transform: translate(64px, 0px);
+            }
+            75% {
+                transform: translate(0px, -64px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
 
     div {
         padding: var(--gutter) calc(var(--gutter)*2) var(--gutter) calc(var(--gutter)*2);
@@ -102,11 +147,36 @@
         max-width: fit-content;
     }
 
+    button {
+        background-color: var(--grey);
+        border-radius: var(--radius);
+        padding: calc(var(--gutter)*3);
+    }
+
+    .chips {
+        display: flex;
+        flex-direction: column;
+        text-wrap: nowrap;
+    }
+
+
 /* desktop */
 
     @media (min-width: 768px) {
 
         /* sections */
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 20vh;
+        }
+
+        aside {
+            display: flex;
+            flex-direction: row;
+            gap: 10%;
+        }
 
         .intro {
             display: grid;
@@ -121,6 +191,11 @@
             flex-direction: row;
             align-items: center;
             gap: calc(var(--gutter)*8);
+        }
+
+        main {
+            padding-top: 20%;
+            padding-bottom: 20%;
         }
 
         /* playing with the grid */
@@ -189,6 +264,21 @@
         .intro button:nth-of-type(9) {
             grid-column: span 1;
             grid-row: span 1;
+        }
+
+        .project-description {
+            max-width: 50%;
+        }
+
+        .assets {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: calc(var(--gutter)*2);
+        }
+
+        .assets img {
+            padding-top: calc(var(--gutter)*8);
+            padding-bottom: calc(var(--gutter)*8);
         }
 
         /* components */
