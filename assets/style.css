@@ -110,6 +110,28 @@
         line-height: 1.5;
     }
 
+    #project1:hover {
+        background-image: url(/assets/KOACH-home.png);
+    }
+
+    #project2:hover {
+        background-image: url(/assets/nomadlandia-home.png);
+        background-position: center bottom;
+    }
+
+    #project3:hover {
+        background-image: url(/assets/spotify-home.png);
+    }
+
+    #project4:hover {
+        background-image: url(/assets/speedety-home.png);
+        background-position: left center;
+    }
+
+    #project5:hover {
+        background-image: url(/assets/tabty-home\ \(2\).png);
+    }
+
     /* components */
 
     header img {
@@ -117,6 +139,11 @@
         max-height: 20rem;
         object-fit: contain;
         animation: cover 3s ease-in infinite;
+    }
+
+    .home-img {
+        object-fit: fill;
+        max-height: fit-content;
     }
 
         @keyframes cover {
@@ -159,6 +186,10 @@
         text-wrap: nowrap;
     }
 
+    #loom-companion-mv3 {
+        display: none;
+    }
+
 
 /* desktop */
 
@@ -172,10 +203,20 @@
             gap: 20vh;
         }
 
-        aside {
+        .home {
+            padding: var(--gutter);
+            height: 100vh;
+        }
+
+        main {
+            max-height: 100%;
+        }
+
+        aside, .tags {
             display: flex;
             flex-direction: row;
             gap: 10%;
+            justify-content: space-between;
         }
 
         .intro {
@@ -214,7 +255,7 @@
         }
 
         .intro button:nth-of-type(2),
-        .intro button:nth-of-type(3)
+        .intro button:nth-of-type(3),
         .cv button:first-of-type,
         .cv button:nth-of-type(3),
         .project1 button:first-of-type,
@@ -256,6 +297,7 @@
         .contact button:nth-of-type(8) */ {
             grid-column: span 12;
             grid-row: span 1;
+            padding: 0;
         }
 
         .intro button:nth-of-type(5),
@@ -264,6 +306,7 @@
         .intro button:nth-of-type(9) {
             grid-column: span 1;
             grid-row: span 1;
+            padding: 0;
         }
 
         .project-description {
@@ -276,6 +319,11 @@
             gap: calc(var(--gutter)*2);
         }
 
+        .assets p {
+            padding-bottom: calc(var(--gutter)*3);
+            line-height: 1.5;
+        }
+
         .assets img {
             padding-top: calc(var(--gutter)*8);
             padding-bottom: calc(var(--gutter)*8);
@@ -285,7 +333,6 @@
         
         button:hover {
             cursor: pointer;
-            transform: scale(1.05);
             transition: 0.2s ease-in-out;
         }
 
