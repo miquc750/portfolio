@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=Unica+One&display=swap');
 
 :root {
-    --black: #131119;
+    --black: #000000;
     --grey: #1D1928;
+    --red: #AD0900;
     --white: #FFFFFF;
     --radius: 16px;
     --gutter: 8px;
     --font-mono: "Azeret Mono", monospace;
     --font-serif: "Instrument Serif", serif;
-    --font-size: 16px;
+    --font-size: 24px;
     --weight-regular: 300;
 }
 
@@ -24,215 +25,117 @@
         font-weight: calc(var(--weight-regular)*2);
     }
 
-    h1 {
-        font-family: var(--font-serif);
-        font-size: calc(var(--font-size)*10);
-        line-height: 1;
+    hgroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-        #intro h1 {
-            font-family: "Unica One", sans-serif;
-            font-weight: 100;
-            font-size: 325px;
-            letter-spacing: -45px;
-        }
-
-    h2 {
-        font-family: var(--font-serif);
-        font-size: calc(var(--font-size)*4);
+    header h1 {
+        font-family: "Roboto", "Sans-serif";
+        font-weight: 900;
+        text-transform: uppercase;
+        z-index: 0;
+        line-height: 0.70;
     }
 
-    p {
-        font-family: var(--font-mono);
-        font-size: var(--font-size);
-        font-weight: var(--weight-regular);
-        padding-bottom: var(--gutter);
+    header h1:first-of-type {
+        font-size: calc(var(--font-size)*6.3);
     }
 
-        #intro p  {
-            font-family: var(--font-serif);
-            font-size: calc(var(--font-size)*2);
-            font-weight: var(--weight-regular);
-            padding-bottom: var(--gutter);
-        }
-
-    .back {
-        position: fixed;
-        background-color: #1D1928;
-        top:32px
+    header h1:nth-of-type(2) {
+        font-size: calc(var(--font-size)*8);
     }
 
-    .top {
-        position: fixed;
-        background-color: #1D1928;
-        bottom:32px;
-        right: 10%;
+    header h2 {
+        font-family: "Roboto", "Sans-serif";
+        font-family: "Instrument Serif", "serif";
+        font-style: italic;
+        font-size: calc(var(--font-size)*2.5);
+        z-index: 1;
+        text-shadow: 
+        1px 1px 0 var(--red), 
+        -1px 1px 0 var(--red), 
+        1px -1px 0 var(--red), 
+        -1px -1px 0 var(--red),
+        1px 0 0 var(--red), 
+        -1px 0 0 var(--red), 
+        0 1px 0 var(--red), 
+        0 -1px 0 var(--red);
+        translate: 0px -16px;
     }
 
-    iframe {
-        min-width: 50vh;
-        min-height: 50vh;
-    }
-
-    .back:hover, .top:hover {
-        background-color: #AC216B;
+    a:hover {
+        cursor: pointer;
+        color: greenyellow;
+        transition: 0.5s linear;
     }
 
     /* sections */
 
-    html {
-        background-color: var(--black);
-        color: var(--white);
+    .nav-top, .nav-bottom {
+        font-family: "Instrument Serif", "serif";
+        font-size: var(--font-size);
+        font-style: italic;
+        font-weight: 500;
+        width: 80vw;
+        z-index: 2;
     }
 
-    body {
-        padding: 10% 10% 5% 10%;
+    #home header {
+        background-color: var(--red);
+        height: 100vh;
+        color: var(--black);
+        padding: 40px 10% 40px 10%;
+        display: flex;
+        flex-direction: column;
+        background-image: url('/assets/dots.png');
+        background-repeat: repeat;
     }
 
-    button a {
+    .title {
+        height: 100%;
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .title hgroup, .title h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    } 
+
+    .title p {
+        background-color: var(--white);
+        max-width: fit-content;
+        padding: 16px 32px 16px 32px;
+        border: 1px solid black;
+        border-radius: 500px;
+        z-index: 100;
+        position: absolute;
+        top: 40%;
+        left: 30%;
         text-wrap: nowrap;
-    }
-
-    .intro {
-        padding: var(--gutter);
+        max-height: fit-content;
+        font-family: "instrument serif";
+        font-size: 64px;
+        transform: rotate(30deg);
     }
 
     footer {
+        background-color: var(--black);
         color: var(--white);
+        padding: 2% 10% 2% 10%;
         text-align: center;
-        height: 5vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content:space-between;
-        font-family: var(--font-mono);
+        font-family: "Instrument Serif";
         font-size: var(--font-size);
-        font-weight: var(--weight-regular);
-        padding-left: 32px;
-        padding-right: 32px;
-        padding-bottom: 32px;
-    }   
-    
-    footer section {
-        display: flex;
-        flex-direction: row;
-        gap: calc(var(--gutter)*3);
-    }
-
-    .intro a {
-        font-family: var(--font-mono);
-        line-height: 1.5;
-    }
-
-    footer a:hover {
-        color: #AC216B;
-        font-weight: 700;
-    }
-
-    header section {
-        display: flex;
-        flex-direction: row;
-        gap: var(--gutter);
-    }
-
-    .tldr {
-        border: solid 1px var(--white);
-        padding: 5%;
-        gap: 15%;
-        display: flex;
-        flex-direction: row;
-    }
-
-        .tldr > section {
-            display: flex;
-            flex-direction: column;
-        }
-    
-    .project-description {
-        display: flex;
-        flex-direction: column;
-        gap: calc(var(--gutter)*2);
-        line-height: 1.5;
-    }
-
-    #project1:hover {
-        background-image: url(/assets/KOACH-home.png);
-    }
-
-    #project2:hover {
-        background-image: url(/assets/nomadlandia-home.png);
-        background-position: center bottom;
-    }
-
-    #project3:hover {
-        background-image: url(/assets/spotify-home.png);
-    }
-
-    #project4:hover {
-        background-image: url(/assets/speedety-home.png);
-        background-position: left center;
-    }
-
-    #project5:hover {
-        background-image: url(/assets/tabty-home\ \(2\).png);
-    }
-
-    /* components */
-
-    header img {
-        max-width: 100%;
-        max-height: 20rem;
-        object-fit: contain;
-        animation: cover 3s ease-in infinite;
-    }
-
-    .home-img {
-        object-fit: fill;
-        max-height: fit-content;
-    }
-
-        @keyframes cover {
-            0% {
-                transform: translate(0px, 0px);
-            }
-            25% {
-                transform: translate(-64px, 64px);
-            }
-            50% {
-                transform: translate(64px, 0px);
-            }
-            75% {
-                transform: translate(0px, -64px);
-            }
-            100% {
-                transform: translate(0px, 0px);
-            }
-        }
-
-    div {
-        padding: var(--gutter) calc(var(--gutter)*2) var(--gutter) calc(var(--gutter)*2);
-        border: 1px solid var(--white);
-        color: var(--white);
-        font-family: var(--font-mono);
-        font-size: var(--font-size);
-        font-weight: var(--weight-regular);
-        max-width: fit-content;
-    }
-
-    button {
-        background-color: var(--grey);
-        border-radius: var(--radius);
-        padding: calc(var(--gutter)*3);
-    }
-
-    .chips {
-        display: flex;
-        flex-direction: column;
-        text-wrap: nowrap;
-    }
-
-    #loom-companion-mv3 {
-        display: none;
     }
 
 
@@ -241,146 +144,30 @@
     @media (min-width: 768px) {
 
         /* sections */
-
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 20vh;
-        }
-
-        .home {
-            padding: var(--gutter);
-            height: 100vh;
-        }
-
-        main {
-            max-height: 100%;
-        }
-
-        aside, .tags {
-            display: flex;
-            flex-direction: row;
-            gap: 10%;
-            justify-content: space-between;
-        }
-
-        .intro {
-            display: grid;
-            grid-template-columns: repeat(14, 1fr);
-            grid-template-rows: repeat(14, 1fr);
-            gap: var(--gutter);
-            height: 95vh;
-        }    
-
-        #intro > section {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: calc(var(--gutter)*8);
-        }
-
-        main {
-            padding-top: 20%;
-            padding-bottom: 20%;
-        }
-
-        /* playing with the grid */
-
-        .intro button:first-of-type, 
-        .cv button:nth-of-type(2), 
-        .project1 button:nth-of-type(3),
-        .project2 button:nth-of-type(4),
-        .project3 button:nth-of-type(5),
-        .project4 button:nth-of-type(6),
-        .project5 button:nth-of-type(7),
-        .play button:nth-of-type(8),
-        .contact button:nth-of-type(9)  {
-            grid-column: span 12;
-            grid-row: span 12;
-        }
-
-        .intro button:nth-of-type(2),
-        .intro button:nth-of-type(3),
-        .cv button:first-of-type,
-        .cv button:nth-of-type(3),
-        .project1 button:first-of-type,
-        .project1 button:nth-of-type(2),
-        .project2 button:nth-of-type(5),
-        .project2 button:nth-of-type(6),
-        .project3 button:nth-of-type(4),
-        .project3 button:nth-of-type(6),
-        .project4 button:nth-of-type(4),
-        .project4 button:nth-of-type(5),
-        .project5 button:nth-of-type(8),
-        .project5 button:nth-of-type(9),
-        .play button:nth-of-type(7),
-        .play button:nth-of-type(9),
-        .contact button:nth-of-type(7),
-        .contact button:nth-of-type(8) {
-            grid-column: span 1;
-            grid-row: span 12;
-        }
-
-        .intro button:nth-of-type(4),
-        .intro button:nth-of-type(7)
-        /* update
-        .cv button:nth-of-type(7),
-        .cv button:nth-of-type(3),
-        .project1 button:first-of-type,
-        .project1 button:nth-of-type(2),
-        .project2 button:nth-of-type(5),
-        .project2 button:nth-of-type(6),
-        .project3 button:nth-of-type(4),
-        .project3 button:nth-of-type(6),
-        .project4 button:nth-of-type(4),
-        .project4 button:nth-of-type(5),
-        .project5 button:nth-of-type(8),
-        .project5 button:nth-of-type(9),
-        .play button:nth-of-type(7),
-        .play button:nth-of-type(9),
-        .contact button:nth-of-type(7),
-        .contact button:nth-of-type(8) */ {
-            grid-column: span 12;
-            grid-row: span 1;
-        }
-
-        .intro button:nth-of-type(5),
-        .intro button:nth-of-type(6),
-        .intro button:nth-of-type(8),
-        .intro button:nth-of-type(9) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .project-description {
-            max-width: 50%;
-        }
-
-        .assets {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: calc(var(--gutter)*2);
-        }
-
-        .assets p {
-            padding-bottom: calc(var(--gutter)*3);
-            line-height: 1.5;
-        }
-
-        .assets img {
-            padding-top: calc(var(--gutter)*8);
-            padding-bottom: calc(var(--gutter)*8);
-        }
-
-        /* components */
         
-        button:hover {
-            cursor: pointer;
-            transition: 0.2s ease-in-out;
+        .nav-top, .nav-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+            text-wrap: nowrap;
         }
 
-        #intro img {
-            max-height: 100%;
+        .nav-top div, .nav-bottom div {
+            height: 1px;
+            width: 100%;
+            background-color: var(--black);
+        }
+
+        .nav-top {
+            position: fixed;
+            top: 40px;
+        }
+
+        .nav-bottom {
+            position: fixed;
+            bottom: 40px;
         }
 
     }
