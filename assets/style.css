@@ -350,6 +350,15 @@
         gap: 5%;
     }
 
+    .projects a {
+        height: 100%;
+    }
+
+    .projects a:hover {
+        transform: scale(1.05);
+        font-weight: 300;
+    }
+
     .project-card {
         background-color: var(--black);
         color: white;
@@ -362,13 +371,28 @@
     .project-card img {
         width: 100%;
         object-fit: cover;
-        min-height: 240px;
+        min-height: 264px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
     }
 
     .project-description {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--gutter)*3);
         padding: 5%;
+    }
+
+    .pills {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gutter);
+    }
+
+    .pills div {
+        padding: 12px 24px 12px 24px;
+        border: solid 1px var(--white);
+        border-radius: 32px;
     }
 
 
