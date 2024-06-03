@@ -1,82 +1,39 @@
+//LOADING OVERLAY
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        const overlay = document.getElementById('loadingOverlay');
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+    }, 2000);
+});
+
+
+//ACCORDION
+
 var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
+for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
 
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
+        var indicator = this.querySelector('.accordion-indicator');
+
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+            indicator.src = 'assets/plus.png';
+            indicator.alt = 'Expand';
+        } else {
+            panel.style.display = "block";
+            indicator.src = 'assets/minus.png';
+            indicator.alt = 'Collapse';
+        }
+    });
 }
 
-/* document.addEventListener("DOMContentLoaded", function() {
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            const projectsContainer = document.querySelector('.projects');
-            const caseStudiesContainer = document.querySelector('.case__study'); 
 
-            // Load "case__study"
-            data['case__study'].forEach(project => {
-                const projectElement = document.createElement('div');
-                projectElement.classList.add('project');
-            
-                projectElement.innerHTML = `
-                    <a href="${project.url}">
-                    <div class="project-card">
-                        <img src="${project.cover__img}" alt="${project.title}">
-                        <section class="project-description">
-                            <h2>${project.title}</h2>
-                            <time datetime="${project.date}">${project.date}</time>
-                            <p>${project.briefing}</p>
-                            <section class="pills">
-                                <div>${project.tag1}</div>
-                                <div>${project.tag2}</div>
-                            </section>
-                        </section>
-                    </div>
-                    </a>
-                `;
-            
-                caseStudiesContainer.appendChild(projectElement);
-            });
-            
-            // Load "project"
-            data['project'].forEach(project => {
-                const projectElement = document.createElement('div');
-                projectElement.classList.add('project');
-            
-                projectElement.innerHTML = `
-                    <a href="${project.url}">
-                    <div class="project-card">
-                        <img src="${project.cover__img}" alt="${project.title}">
-                        <section class="project-description">
-                            <h2>${project.title}</h2>
-                            <time datetime="${project.date}">${project.date}</time>
-                            <p>${project.briefing}</p>
-                            <section class="pills">
-                                <div>${project.tag1}</div>
-                                <div>${project.tag2}</div>
-                            </section>
-                        </section>
-                    </div>
-                    </a>
-                `;
-            
-                projectsContainer.appendChild(projectElement);
-            });
-        })
-        .catch(error => console.error('Error loading the projects:', error));
-}); */
-
+//PROJECT CARDS
 
 document.addEventListener("DOMContentLoaded", function() {
     fetch('data.json')
