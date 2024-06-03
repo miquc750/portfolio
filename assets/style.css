@@ -25,10 +25,41 @@
         font-weight: calc(var(--weight-regular)*2);
     }
 
+    h2 {
+        font-family:  "Instrument Serif", "serif";
+        font-size: calc(var(--font-size)*1.5);
+        padding-bottom: var(--gutter);
+    }
+
+    h3 {
+        font-family:  "Roboto", "sans-serif";
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        font-family:  "Roboto", "sans-serif";
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    p, a, time {
+        font-family:  "Roboto", "sans-serif";
+        font-weight: 300;
+        font-size: 18px;
+    }
+
     hgroup {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .accordion hgroup {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gutter);
     }
 
     header h1 {
@@ -69,6 +100,19 @@
         cursor: pointer;
         color: greenyellow;
         transition: 0.5s linear;
+        font-weight: 600;
+    }
+
+    blockquote>p {
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        padding-bottom: calc(var(--gutter)*2);
+        font-size: var(--font-size);
+        line-height: 1.5;
+    }
+
+    p.highlight {
+        font-size: 56px;
     }
 
     /* sections */
@@ -91,6 +135,40 @@
         flex-direction: column;
         background-image: url('/assets/dots.png');
         background-repeat: repeat;
+    }
+
+    #about {
+        background-color: var(--black);
+        color: var(--white);
+        padding: 10%;
+        background-image: url('/assets/dots.png');
+        background-repeat: repeat;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15vh;
+    }
+
+    #about>section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10vh;
+    }
+
+    #skills section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: calc(var(--gutter)*2);
+        margin-top: 32px;
+    }
+
+    #skills div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gutter);
+        padding-bottom: var(--gutter);
     }
 
     .title {
@@ -129,6 +207,13 @@
         transform: rotate(30deg);
     }
 
+    .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5%;
+    }
+    
+
     footer {
         background-color: var(--black);
         color: var(--white);
@@ -136,6 +221,88 @@
         text-align: center;
         font-family: "Instrument Serif";
         font-size: var(--font-size);
+    }
+
+    /* components */
+
+    .accordion {
+        color: var(--white);
+        cursor: pointer;
+        padding: calc(var(--gutter)*3) var(--gutter) calc(var(--gutter)*3) var(--gutter);
+        width: 100%;
+        text-align: left;
+        border-bottom: solid 3px var(--white);
+        transition: 0.4s;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gutter);
+    }
+    
+    .accordion:hover {
+        background-color: var(--red);
+    }
+
+    .accordion.active {
+
+    }
+    
+    .pannel {
+        display: none;
+        overflow: hidden;
+    }
+
+    .pannel section {
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
+        padding: calc(var(--gutter)*3) calc(var(--gutter)*2) calc(var(--gutter)*3) calc(var(--gutter)*2);
+    }
+
+    div img, a img {
+        max-height: 24px;
+    }
+
+    a {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gutter);
+    }
+
+    .degree, blockquote {
+        display: flex;
+        flex-direction: column;
+        padding-top: calc(var(--gutter)*3);
+        padding-bottom: calc(var(--gutter)*3);
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
+        gap: var(--gutter);
+        justify-content: space-between;
+    }
+
+    .degree div {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gutter);
+    }
+
+    cite {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .a-button {
+        padding: 16px 24px 16px 24px;
+        border-radius: 12px;
+        background-color: var(--red);
+        width: fit-content;
+        text-align: center;
+        align-items: center;
+        transition: 0.4s;
+    }
+
+    .a-button:hover {
+        background-color: greenyellow;
+        color: white;
     }
 
 
