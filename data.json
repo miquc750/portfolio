@@ -7,7 +7,9 @@
             "tag-2": "data visualization",
             "tag-3": "UX/UI",
             "briefing": "KOACH. is a platform for basketball coaches to manage their teams based on data.",
-            "date": "January — April 2024"
+            "date": "January — April 2024",
+            "cover__img": "/assets/koach-cover.png",
+            "url":"cristinamiquel.com/koach"
         },
         {
             "title": "Tabty",
@@ -16,7 +18,9 @@
             "tag-2": "research",
             "tag-3": null,
             "briefing": "Tabty is a game app designed to anticipate the detection of Parkinson Disease by analyzing the interaction of the user with the keyboard with a ML algorithm.",
-            "date": "September — December 2023"
+            "date": "September — December 2023",
+            "cover__img": "/assets/tabty-cover.png",
+            "url":"cristinamiquel.com/tabty"
         },
         {
             "title": "Speedety",
@@ -25,7 +29,9 @@
             "tag-2": "UI",
             "tag-3": "A/B Testing",
             "briefing": "A rental service crafted for all-time car lovers who want to stop watching and start driving, putting at their hands the chance to have first-hand experiences with classic cars that will become lifetime memories.",
-            "date": "October 2023"
+            "date": "October 2023",
+            "cover__img": "/assets/speedety-home.png",
+            "url":"cristinamiquel.com/speedety"
         }
     ],
     "project": [
@@ -36,7 +42,9 @@
             "tag-2": "UX",
             "tag-3": null,
             "briefing": "Spotify Connect is a waterproof speaker designed to innovate shower listening experience for shower singers and dancers, delivering unmatched audio quality and allowing users to seamlessly enjoy their favorite tunes in any wet environment.",
-            "date": "March — April 2022"
+            "date": "March — April 2022",
+            "cover__img": "/assets/spotify-connect-cover.png",
+            "url":"cristinamiquel.com/spotify-connect"
         },
         {
             "title": "Nomadlandia",
@@ -45,7 +53,9 @@
             "tag-2": "branding",
             "tag-3": "micro-interactions",
             "briefing": "Nomadlandia is a website to attract digital nomads to Spain, making them feel home from day 1, helped by locals' recommendations",
-            "date": "March — April 2024"
+            "date": "March — April 2024",
+            "cover__img": "/assets/nomadlandia.gif",
+            "url":"cristinamiquel.com/nomadlandia"
         },
         {
             "title": "Gastronomika",
@@ -54,7 +64,9 @@
             "tag-2": "branding",
             "tag-3": null,
             "briefing": "Gastronomika is a gifting platform for foodies",
-            "date": "May — July 2022"
+            "date": "May — July 2022",
+            "cover__img": "/assets/koach-home.png",
+            "url":"cristinamiquel.com/gastronomika"
         }
     ]
 }
