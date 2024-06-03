@@ -1,0 +1,60 @@
+{
+    "case-study": [
+        {
+            "title": "KOACH.",
+            "type": "case-study",
+            "tag-1": "research",
+            "tag-2": "data visualization",
+            "tag-3": "UX/UI",
+            "briefing": "KOACH. is a platform for basketball coaches to manage their teams based on data.",
+            "date": "January — April 2024"
+        },
+        {
+            "title": "Tabty",
+            "type": "case-study",
+            "tag-1": "product management",
+            "tag-2": "research",
+            "tag-3": null,
+            "briefing": "Tabty is a game app designed to anticipate the detection of Parkinson Disease by analyzing the interaction of the user with the keyboard with a ML algorithm.",
+            "date": "September — December 2023"
+        },
+        {
+            "title": "Speedety",
+            "type": "case-study",
+            "tag-1": "branding",
+            "tag-2": "UI",
+            "tag-3": "A/B Testing",
+            "briefing": "A rental service crafted for all-time car lovers who want to stop watching and start driving, putting at their hands the chance to have first-hand experiences with classic cars that will become lifetime memories.",
+            "date": "October 2023"
+        }
+    ],
+    "project": [
+        {
+            "title": "Spotify Connect",
+            "type": "project",
+            "tag-1": "physical product",
+            "tag-2": "UX",
+            "tag-3": null,
+            "briefing": "Spotify Connect is a waterproof speaker designed to innovate shower listening experience for shower singers and dancers, delivering unmatched audio quality and allowing users to seamlessly enjoy their favorite tunes in any wet environment.",
+            "date": "March — April 2022"
+        },
+        {
+            "title": "Nomadlandia",
+            "type": "project",
+            "tag-1": "coding",
+            "tag-2": "branding",
+            "tag-3": "micro-interactions",
+            "briefing": "Nomadlandia is a website to attract digital nomads to Spain, making them feel home from day 1, helped by locals' recommendations",
+            "date": "March — April 2024"
+        },
+        {
+            "title": "Gastronomika",
+            "type": "project",
+            "tag-1": "UX/UI",
+            "tag-2": "branding",
+            "tag-3": null,
+            "briefing": "Gastronomika is a gifting platform for foodies",
+            "date": "May — July 2022"
+        }
+    ]
+}
