@@ -17,17 +17,17 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+/* document.addEventListener("DOMContentLoaded", function() {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
             const projectsContainer = document.querySelector('.projects');
-            const caseStudiesContainer = document.querySelector('.case__study'); // Asegúrate de que este selector esté correctamente asignado
+            const caseStudiesContainer = document.querySelector('.case__study'); 
 
-            // Load "case-study"
-            data['case-study'].forEach(project => {
+            // Load "case__study"
+            data['case__study'].forEach(project => {
                 const projectElement = document.createElement('div');
-                projectElement.classList.add('case__study');
+                projectElement.classList.add('project');
             
                 projectElement.innerHTML = `
                     <a href="${project.url}">
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </a>
                 `;
             
-                caseStudiesContainer.appendChild(projectElement); // Cambiado de projectsContainer a caseStudiesContainer
+                caseStudiesContainer.appendChild(projectElement);
             });
             
             // Load "project"
@@ -75,4 +75,59 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         })
         .catch(error => console.error('Error loading the projects:', error));
+}); */
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        const projectsContainer = document.querySelector('.projects');
+        const caseStudiesContainer = document.querySelector('.case__study');
+
+        function addProjects(projects, container) {
+            projects.forEach(project => {
+                const projectElement = document.createElement('div');
+                projectElement.classList.add('project', 'project-card');
+
+                projectElement.innerHTML = `
+                    <a href="${project.url}">
+                    <div class="project-card">
+                        <img src="${project.cover__img}" alt="${project.title}">
+                        <section class="project-description">
+                            <h2>${project.title}</h2>
+                            <time datetime="${project.date}">${project.date}</time>
+                            <p>${project.briefing}</p>
+                            <section class="pills">
+                                <div>${project.tag1}</div>
+                                <div>${project.tag2}</div>
+                            </section>
+                        </section>
+                    </div>
+                    </a>
+                `;
+
+                container.appendChild(projectElement);
+            });
+        }
+
+        addProjects(data['case__study'], caseStudiesContainer);
+        addProjects(data['project'], projectsContainer);
+
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+    })
+    .catch(error => console.error('Error loading the projects:', error));
 });

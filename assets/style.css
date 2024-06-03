@@ -179,7 +179,16 @@
         background-color: var(--red);
         background-image: url('/assets/dots.png');
         background-repeat: repeat;
+        display: flex;
+        flex-direction: column;
+        gap: 15vh;
     }
+
+        #work>section {
+            display: flex;
+            flex-direction: column;
+            gap: 3vh;
+        }
 
     #contact {
         background-color: var(--black);
@@ -260,7 +269,7 @@
     footer {
         background-color: var(--black);
         color: var(--white);
-        padding: 2% 10% 2% 10%;
+        padding: 5% 10% 5% 10%;
         text-align: center;
         font-family: "Instrument Serif";
         font-size: var(--font-size);
@@ -344,17 +353,17 @@
         color: white;
     }
 
-    .projects {
+    .projects, .case__study {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 5%;
     }
 
-    .projects a {
+    .projects a, .case__study a  {
         height: 100%;
     }
 
-    .projects a:hover {
+    .projects a:hover, .case__study a:hover {
         transform: scale(1.05);
         font-weight: 300;
     }
