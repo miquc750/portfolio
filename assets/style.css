@@ -109,6 +109,13 @@
         font-weight: 600;
     }
 
+    .nav-top a, .nav-bottom a {
+        font-family: "Instrument Serif", "serif";
+        font-size: var(--font-size);
+        font-style: italic;
+        font-weight: 500;
+    }
+
     blockquote>p {
         font-family: "Instrument Serif", serif;
         font-style: italic;
@@ -135,6 +142,14 @@
         padding-bottom: 32px;
     }
 
+    .light-mode {
+        color: var(--red);
+    }
+
+    .light-mode a {
+        font-weight: 600;
+    }
+
     /* sections */
 
     html {
@@ -154,13 +169,9 @@
     }
 
     .nav-top, .nav-bottom {
-        font-family: "Instrument Serif", "serif";
-        font-size: var(--font-size);
-        font-style: italic;
-        font-weight: 500;
         width: 80vw;
         z-index: 2;
-    }
+    } 
 
     .nav-top li, .nav-bottom li {
         padding: 12px 24px 12px 24px;
@@ -299,6 +310,12 @@
     }
 
     /* components */
+
+    .nav-top.light-mode div, .nav-bottom.light-mode div {
+        background-color: var(--red);
+        height: 1px;
+        width: 100%;
+    }
 
     .accordion {
         color: var(--white);
@@ -445,7 +462,14 @@
     }
 
     .nav-top li.active, .nav-bottom li.active {
-        color: violet;
+        border: 1px solid var(--black);
+        background-color: var(--red);
+        border-radius: 50px;
+    }
+
+    .nav-top.light-mode li.active, .nav-bottom.light-mode li.active {
+        border: 2px solid var(--red);
+        background-color: var(--black);
     }
 
     .assets {
