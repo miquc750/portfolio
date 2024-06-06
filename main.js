@@ -143,3 +143,28 @@ function handleNavColor() {
         }
     });
 }
+
+//CAROUSEL
+
+document.querySelector('.next').addEventListener('click', function() {
+    scrollCarousel(1);
+});
+
+document.querySelector('.prev').addEventListener('click', function() {
+    scrollCarousel(-1);
+});
+
+let currentImageIndex = 0;
+const imagesCount = document.querySelectorAll('.carousel-images img').length;
+
+function scrollCarousel(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) {
+        currentImageIndex = imagesCount - 1;
+    } else if (currentImageIndex >= imagesCount) {
+        currentImageIndex = 0;
+    }
+    const carouselImages = document.querySelector('.carousel-images');
+    const imageWidth = carouselImages.querySelector('img').clientWidth;
+    carouselImages.style.transform = `translateX(-${currentImageIndex * imageWidth}px)`;
+}
