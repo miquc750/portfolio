@@ -605,16 +605,16 @@
 
     /* animations */
 
-    .block {
+    .block /*, #exploration, #lowfi, #midfi, #highfi, #reflection*/ {
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
     }
     
-    .block.visible {
+    .block.visible, #exploration.visible, #lowfi.visible, #midfi.visible, #highfi.visible, #reflection.visible {
         opacity: 1;
     }
 
-    /* #loadingOverlay {
+    #loadingOverlay {
         position: fixed;
         position: fixed;
         top: 0;
@@ -629,7 +629,7 @@
         visibility: visible;
         transition: opacity 1s, visibility 1s step-end;
         z-index: 2000;
-    } */
+    }
 
     .logo {
         max-width: 10%;

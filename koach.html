@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-    <head>
-        <title>Cristina Miquel Garrido / Koach</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="assets/reset.css" rel="stylesheet">
-		<link href="assets/style.css" rel="stylesheet">
-        <script defer src="main.js"></script>
-    </head>
-    
-    <body class="projectpage">
-        <header>
-            <a href="/" class="back"><div>←</div></a>
-            <h1>KOACH.</h1>
-            <section class="tldr">
-                <p class="tldrpart">January — April 2024</p>
-                <section class="pills tldrpart">
-                    <div>data visualization</div>
-                    <div>research</div>
-                    <div>ux/ui</div>
-                </section>
-                <p class="tldrpart">A platform for basketball coaches to manage their teams based on data. </p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristina Miquel Garrido / Koach</title>
+    <link href="assets/reset.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+    <script defer src="main.js"></script>
+    <style>
+        /* Estilo inicial para ocultar el contenido */
+        body.projectpage {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        body.projectpage.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="projectpage">
+    <header>
+        <a href="/" class="back"><div>←</div></a>
+        <h1>KOACH.</h1>
+        <section class="tldr">
+            <p class="tldrpart">January — April 2024</p>
+            <section class="pills tldrpart">
+                <div>data visualization</div>
+                <div>research</div>
+                <div>ux/ui</div>
             </section>
-            <img src="assets/koach.png">
-        </header>
+            <p class="tldrpart">A platform for basketball coaches to manage their teams based on data. </p>
+        </section>
+        <img src="assets/koach.png" alt="koach header image">
+    </header>
 
         <main class="assets">
             <ul class="projectnav">
@@ -33,7 +45,7 @@
                 <li><a href="#reflection">Reflection</a></li>
             </ul>
             
-            <section class="projectcontent">
+            <section class="projectcontent" class="block">
                 <section id="exploration">
                     <section class="projectexplanation">
                         <h2>Exploratory Phase</h2>
@@ -124,5 +136,11 @@
             Crafted & coded by Cristina Miquel
             <a href="#" class="top"><div>↑</div></a>
         </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const body = document.querySelector('body');
+                body.classList.add('loaded');
+            });
+        </script>
     </body>
 </html>
