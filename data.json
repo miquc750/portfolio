@@ -9,7 +9,7 @@
             "briefing": "KOACH. is a platform for basketball coaches to manage their teams based on data.",
             "date": "January — April 2024",
             "cover__img": "/assets/koach-cover.png",
-            "url":"cristinamiquel.com/koach"
+            "url":"koach"
         },
         {
             "title": "Tabty",
@@ -20,7 +20,7 @@
             "briefing": "Tabty is a game app designed to anticipate the detection of Parkinson Disease by analyzing the interaction of the user with the keyboard with a ML algorithm.",
             "date": "September — December 2023",
             "cover__img": "/assets/tabty-cover.png",
-            "url":"cristinamiquel.com/tabty"
+            "url":"tabty"
         },
         {
             "title": "Speedety",
@@ -31,7 +31,7 @@
             "briefing": "A rental service crafted for all-time car lovers who want to stop watching and start driving, putting at their hands the chance to have first-hand experiences with classic cars that will become lifetime memories.",
             "date": "October 2023",
             "cover__img": "/assets/speedety-home.png",
-            "url":"cristinamiquel.com/speedety"
+            "url":"speedety"
         }
     ],
     "project": [
@@ -44,7 +44,7 @@
             "briefing": "Spotify Connect is a waterproof speaker designed to innovate shower listening experience for shower singers and dancers, delivering unmatched audio quality and allowing users to seamlessly enjoy their favorite tunes in any wet environment.",
             "date": "March — April 2022",
             "cover__img": "/assets/spotify-connect-cover.png",
-            "url":"cristinamiquel.com/spotify-connect"
+            "url":"spotify-connect"
         },
         {
             "title": "Nomadlandia",
@@ -55,7 +55,7 @@
             "briefing": "Nomadlandia is a website to attract digital nomads to Spain, making them feel home from day 1, helped by locals' recommendations",
             "date": "March — April 2024",
             "cover__img": "/assets/nomadlandia.gif",
-            "url":"cristinamiquel.com/nomadlandia"
+            "url":"nomadlandia"
         },
         {
             "title": "Gastronomika",
@@ -66,7 +66,7 @@
             "briefing": "Gastronomika is a gifting platform for foodies",
             "date": "May — July 2022",
             "cover__img": "/assets/koach-home.png",
-            "url":"cristinamiquel.com/gastronomika"
+            "url":"gastronomika"
         }
     ]
 }
