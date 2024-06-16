@@ -358,7 +358,7 @@
         gap: var(--gutter);
     }
 
-    .about img, a img {
+    .about img, a img, .degree img {
         max-height: 24px;
     }
 
@@ -605,7 +605,16 @@
 
     /* animations */
 
-    #loadingOverlay {
+    .block {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .block.visible {
+        opacity: 1;
+    }
+
+    /* #loadingOverlay {
         position: fixed;
         position: fixed;
         top: 0;
@@ -620,7 +629,7 @@
         visibility: visible;
         transition: opacity 1s, visibility 1s step-end;
         z-index: 2000;
-    }
+    } */
 
     .logo {
         max-width: 10%;
