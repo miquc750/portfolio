@@ -399,12 +399,16 @@
         height: 20px;
     }
     
-    .pannel {
+    .panel {
         display: none;
         overflow: hidden;
     }
 
-    .pannel section {
+    .panel.active {
+        display: block;
+    }
+
+    .panel section {
         padding: calc(var(--gutter)*3) calc(var(--gutter)*2) calc(var(--gutter)*3) calc(var(--gutter)*2);
         display: flex;
         flex-direction: column;
@@ -437,7 +441,7 @@
         justify-content: space-between;
     }
 
-    .degree div, .pannel>section div {
+    .degree div, .panel>section div {
         display: flex;
         flex-direction: row;
         gap: var(--gutter);

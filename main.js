@@ -114,7 +114,7 @@ function updateNav() {
             }
         });
     }, {
-        threshold: 0.1 // Ajustar el umbral aquí
+        threshold: 0.1 
     });
 
     sections.forEach(section => {
@@ -125,3 +125,24 @@ function updateNav() {
 document.addEventListener('DOMContentLoaded', function() {
     updateNav();
 });
+
+
+    // ACCORDION FUNCTIONALITY
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            var indicator = this.querySelector('.accordion-indicator');
+
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+                indicator.src = 'assets/plus.png';
+                indicator.alt = 'Expand';
+            } else {
+                panel.style.display = "block";
+                indicator.src = 'assets/minus.png';
+                indicator.alt = 'Collapse';
+            }
+        });
+    }
