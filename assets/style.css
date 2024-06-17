@@ -637,6 +637,14 @@
 
         /* carousel */
 
+        .carousel-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
         .carousel {
             position: relative;
             overflow: hidden;
@@ -652,10 +660,9 @@
         }
         
         .carousel-images img {
-            width: 33.3333%;
-            height: 100%;
-            /*flex-shrink: 0;*/
-            object-fit:cover;
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         .prev, .next {
@@ -855,12 +862,21 @@
         }
 
         .carousel {
-            width: 854px;
-            height: 480px;
+            width: 60vw;
+            height: 40vw;
+            border-radius: 32px;
         }
 
         .carousel-images {
-            width: 300%; 
+            width: 500%; 
+        }
+
+        .carousel-images img {
+            min-width: 60vw;
+            max-width: 60vw;
+            width: 60vw;
+            object-fit: contain;
+            height: 40vw;
         }
 
         .navlogo {
@@ -895,8 +911,8 @@
         }
 
         
-    .projectnav li:first-of-type {
-        display: block;
-    }
+        .projectnav li:first-of-type {
+            display: block;
+        }
 
     }
