@@ -67,3 +67,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+ // CAROUSEL FUNCTIONALITY
+ const carouselImages = document.querySelectorAll('.carousel-images img');
+ const prevButton = document.querySelector('.prev');
+ const nextButton = document.querySelector('.next');
+ let currentIndex = 0;
+
+ function showImage(index) {
+     carouselImages.forEach((img, i) => {
+         img.style.display = i === index ? 'block' : 'none';
+     });
+ }
+
+ function showNextImage() {
+     currentIndex = (currentIndex + 1) % carouselImages.length;
+     showImage(currentIndex);
+ }
+
+ function showPrevImage() {
+     currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+     showImage(currentIndex);
+ }
+
+ nextButton.addEventListener('click', showNextImage);
+ prevButton.addEventListener('click', showPrevImage);
+
+ showImage(currentIndex);
+
+
+// INTERSECTION OBSERVER FOR NAVIGATION
+function updateNav() {
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('.projectnav a');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.1 // Ajustar el umbral aquí
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateNav();
+});

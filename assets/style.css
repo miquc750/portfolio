@@ -63,7 +63,6 @@
 
     p, a, time {
         font-family:  "Roboto", "sans-serif";
-        font-weight: 300;
         font-size: 18px;
     }
 
@@ -350,6 +349,9 @@
         font-size: var(--font-size);
         border-top: 1px solid var(--white);
         text-align: left;
+    }
+
+    .projectpage footer {
         margin-top: 64px;
     }
 
@@ -563,7 +565,7 @@
 
     .projectnav a.active {
         color: var(--red);
-        font-weight: 600px;
+        font-weight: 800;
     }
 
     .projectcontent {
@@ -653,7 +655,7 @@
             width: 33.3333%;
             height: 100%;
             /*flex-shrink: 0;*/
-            object-fit: cover;
+            object-fit:cover;
         }
         
         .prev, .next {
@@ -775,6 +777,7 @@
 
         footer {
             text-align: center;
+            padding-bottom: 32px;
         }
 
         /* sections */
