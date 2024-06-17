@@ -191,7 +191,7 @@
         top: 0;
         padding: 32px 0 32px 0;
         background-color: var(--black);
-        min-width: 93%;
+        min-width: 92%;
         max-width: 100%;
         display: flex;
         flex-direction: row;
@@ -329,23 +329,6 @@
         height: 100%;
     } 
 
-    .title p {
-        background-color: var(--white);
-        max-width: fit-content;
-        padding: 16px 32px 16px 32px;
-        border: 1px solid black;
-        border-radius: 500px;
-        z-index: 100;
-        position: absolute;
-        top: 40%;
-        left: 30%;
-        text-wrap: nowrap;
-        max-height: fit-content;
-        font-family: "instrument serif";
-        font-size: 64px;
-        transform: rotate(30deg);
-    }
-
     .cols {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -361,7 +344,7 @@
     footer {
         background-color: var(--black);
         color: var(--white);
-        padding: 5% 10% 5% 10%;
+        padding: 5% 10% 15% 10%;
         text-align: center;
         font-family: "Instrument Serif";
         font-size: var(--font-size);
@@ -883,6 +866,12 @@
 
         .navicon {
             display: none;
+        }
+
+        .projectpage .nav-top {
+            max-width: 80%;
+            width: 80%;
+            min-width: 80%;
         }
 
         .projectpage .nav-top>div {
