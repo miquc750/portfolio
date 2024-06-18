@@ -142,7 +142,8 @@
     }
 
     #contact .highlight {
-        font-size: 128px;
+        font-size: 40vw;
+        padding-bottom: 32px;
         text-decoration: overline;
         padding-top: 32px;
         font-family: "Instrument Serif", serif;
@@ -151,8 +152,8 @@
     .social-links {
         display: flex;
         flex-direction: column;
-        gap: var(--gutter);
-        padding-bottom: 32px;
+        gap: 16px;
+        padding-bottom: 64px;
     }
 
     .light-mode {
@@ -167,6 +168,7 @@
 
     html {
         scroll-behavior: smooth;
+        overflow-x:hidden;
     }
 
     .projectcontent>section {
@@ -250,7 +252,7 @@
     #about {
         background-color: var(--black);
         color: var(--white);
-        padding: 10%;
+        padding: 72px 16px 72px 16px;
         background-image: url('/assets/dots.png');
         background-repeat: repeat;
         width: 100%;
@@ -261,7 +263,7 @@
     }
 
     #work {
-        padding: 10%;
+        padding: 72px 16px 72px 16px;
         background-color: var(--red);
         background-image: url('/assets/dots.png');
         background-repeat: repeat;
@@ -286,6 +288,7 @@
         width: 100%;
         justify-content: center;
         align-items: start;
+        padding-left: 16px;
     }
 
     #about>section {
@@ -343,10 +346,10 @@
     footer {
         background-color: var(--black);
         color: var(--white);
-        padding: 5% 10% 15% 10%;
+        padding: 40px 16px 40px 16px;
         text-align: center;
         font-family: "Instrument Serif";
-        font-size: var(--font-size);
+        font-size: 22px;
         border-top: 1px solid var(--white);
         text-align: left;
     }
@@ -469,9 +472,9 @@
     }
 
     .projects, .case__study {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
     }
 
     .projects a, .case__study a  {
@@ -761,6 +764,11 @@
 
         /* text */
 
+        #contact .highlight {
+            font-size: 128px;
+            padding-bottom: 0;
+        }
+
         header h1:first-of-type {
             font-size: calc(var(--font-size)*6.3);
         }
@@ -788,10 +796,20 @@
 
         footer {
             text-align: center;
-            padding-bottom: 32px;
+            padding: 5% 10% 32px 10%;
         }
 
         /* sections */
+
+        #about, #work {
+            padding: 10%;
+        }
+
+        .projects, .case__study {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5%;
+        }
 
         .projectpage {
             padding: 10% 10% 0 10%;
@@ -856,6 +874,11 @@
 
         .projectpage header {
             gap: 10vh;
+        }
+
+        .social-links {
+            padding-bottom: 32px;
+            gap: 8px;
         }
 
         /* components */
