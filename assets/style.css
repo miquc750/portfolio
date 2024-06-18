@@ -33,7 +33,7 @@
 
     h2 {
         font-family:  "Instrument Serif", "serif";
-        font-size: calc(var(--font-size)*1.5);
+        font-size: 48px;
         padding-bottom: var(--gutter);
     }
 
@@ -87,7 +87,7 @@
     }
 
     header h1:first-of-type {
-        font-size: 24vw;
+        font-size: 20vw;
         text-wrap: wrap;
         max-width: 100%;
         line-height: 1;
@@ -95,14 +95,15 @@
     }
 
     header h1:nth-of-type(2) {
-        font-size: calc(var(--font-size)*8);
+        font-size: 25.5vw;
     }
 
     header h2 {
         font-family: "Roboto", "Sans-serif";
         font-family: "Instrument Serif", "serif";
         font-style: italic;
-        font-size: calc(var(--font-size)*2.5);
+        /*font-size: calc(var(--font-size)*2.5);*/
+        font-size: 36px;
         z-index: 1;
         text-shadow: 
         1px 1px 0 var(--red), 
@@ -113,7 +114,8 @@
         -1px 0 0 var(--red), 
         0 1px 0 var(--red), 
         0 -1px 0 var(--red);
-        translate: 0px -16px;
+        /*translate: 0px -16px;*/
+        translate: 0px -4px;
     }
 
     a:hover {
@@ -138,7 +140,7 @@
     }
 
     p.highlight {
-        font-size: 56px;
+        font-size: 48px;
     }
 
     #contact .highlight {
@@ -242,7 +244,7 @@
         background-color: var(--red);
         height: 100vh;
         color: var(--black);
-        padding: 40px 10% 40px 10%;
+        padding: 40px 16px 40px 16px;
         display: flex;
         flex-direction: column;
         background-image: url('/assets/dots.png');
@@ -300,7 +302,7 @@
 
     #skills section {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: calc(var(--gutter)*2);
         margin-top: 32px;
     }
@@ -332,9 +334,8 @@
     } 
 
     .cols {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 5%;
+        display: flex;
+        flex-direction: column;
     }
 
     .projectpage #contact {
@@ -366,6 +367,67 @@
     }
 
     /* components */
+
+        /*mobile menu*/
+
+        .menu-toggle {
+            cursor: pointer;
+            background: none;
+            border: none;
+            position: fixed;
+            left: 16px;
+            top: 40px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--black);
+            margin: 5px 0;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            background-color: var(--red);
+            z-index: 2;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20% 16px 40px 16px;
+        }
+        
+        .mobile-menu ul li {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--black);
+        }
+
+        .mobile-menu a {
+            font-family: "Instrument Serif", serif;
+            font-size: 64px;
+        }
+        
+        .mobile-menu ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* */
+
+    .nav-top li:nth-of-type(2), .nav-top li:nth-of-type(3), .nav-top li:nth-of-type(4), .nav-bottom {
+        display: none;
+    }
 
     .nav-top.light-mode div, .nav-bottom.light-mode div {
         background-color: var(--red);
@@ -460,9 +522,10 @@
         padding: 16px 24px 16px 24px;
         border-radius: 12px;
         background-color: var(--red);
-        width: fit-content;
+        width: 100%;
         text-align: center;
         align-items: center;
+        justify-content: center;
         transition: 0.4s;
     }
 
@@ -764,6 +827,10 @@
 
         /* text */
 
+        p.highlight {
+            font-size: 56px;
+        }
+
         #contact .highlight {
             font-size: 128px;
             padding-bottom: 0;
@@ -771,6 +838,11 @@
 
         header h1:first-of-type {
             font-size: calc(var(--font-size)*6.3);
+        }
+
+        header h2 {
+            font-size: calc(var(--font-size)*2.5);
+            translate: 0px -16px;
         }
 
         .assets>section h2 {
@@ -801,6 +873,10 @@
 
         /* sections */
 
+        #home header {
+            padding: 40px 10% 40px 10%;
+        }
+
         #about, #work {
             padding: 10%;
         }
@@ -830,6 +906,10 @@
             background-color: var(--black);
         }
 
+        .nav-top li:nth-of-type(2), .nav-top li:nth-of-type(3), .nav-top li:nth-of-type(4), .nav-bottom {
+            display: block;
+        }
+
         .nav-top {
             position: fixed;
             top: 40px;
@@ -838,6 +918,8 @@
         .nav-bottom {
             position: fixed;
             bottom: 40px;
+            display: flex;
+            flex-direction: row;
         }
 
         .projectnav {
@@ -881,7 +963,25 @@
             gap: 8px;
         }
 
+        .cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 5%;
+        }
+
+        #skills section {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         /* components */
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .nav-top li:first-of-type {
+            display: none;
+        }
 
         .projectcontent>section img {
             width: 100%;
@@ -936,10 +1036,13 @@
             background-color: var(--white);
             color: var(--black);
         }
-
         
         .projectnav li:first-of-type {
             display: block;
+        }
+
+        .a-button {
+            width: fit-content;
         }
 
     }

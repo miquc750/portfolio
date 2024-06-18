@@ -242,3 +242,13 @@ document.addEventListener('DOMContentLoaded', function() {
     updateNav();
 });
 
+
+//MOBILE MENU
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+    });
+});
