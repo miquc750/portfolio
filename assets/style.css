@@ -404,7 +404,7 @@
         overflow: hidden;
     }
 
-    .panel.active {
+    .accordion.active + .panel {
         display: block;
     }
 
