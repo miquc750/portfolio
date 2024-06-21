@@ -1,15 +1,20 @@
 <!DOCTYPE html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cristina Miquel Garrido / Portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
         <link href="assets/reset.css" rel="stylesheet">
 		<link href="assets/style.css" rel="stylesheet">
-        <script defer src="main.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     </head>
     
     <body id="home">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
         <div id="loadingOverlay">
             <p class="logo">CM</p>
@@ -62,10 +67,10 @@
             <section id="about" class="dark-section">
                 <p class="highlight block">Hi! 👋 My name is Cristina (She/Her) and I am a Digital Product Designer, who enjoys creating products with personality and soul, based on solid values that match mine.</p>                
                 <section>
-                    <section id="experience" class="block">
-                        <h2>Professional Experience</h2>
+                    <section id="experience">
+                        <h2 class="block">Professional Experience</h2>
                         <section>
-                            <button class="accordion">
+                            <button class="accordion block">
                                 <hgroup>
                                     <h3>Manfred</h3>
                                     <time datetime="2020-08">Aug 2020</time>
@@ -107,7 +112,7 @@
                             </div>
                         </section>
                         <section>
-                            <button class="accordion">
+                            <button class="accordion block">
                                 <hgroup>
                                     <h3>Start UC3M</h3>
                                     <time datetime="2016-09">Sep 2016</time>
@@ -159,80 +164,94 @@
                         </section>
                     </section>
 
-                    <section id="education" class="block">
-                        <h2>Education</h2>
+                    <section id="education">
+                        <h2 class="block">Education</h2>
                         <section class="cols">
-                            <div class="degree">
-                                <h3>MPS Communication Design</h3>
+                            <div class="degree block">
+                                <div>
+                                    <h3>MPS Communication Design</h3>
+                                    <p class="faded">Aug 23 — May 24</p>
+                                </div>
                                 <p>Parsons School of Design, NYC</p>
-                                <div><img src="assets/premium-badge.png" alt="badge icon"><p>La Caixa Foundation Fellow</p></div>
-                                <p>(Aug 2023 — May 2024)</p>
+                                <div class="badge"><img src="assets/premium-badge.png" alt="badge icon"><p>La Caixa Foundation Fellow</p></div>
                             </div>
-                            <div class="degree">
-                                <h3>Product Studio & Startup Studio</h3>
+                            <div class="degree block">
+                                <div>
+                                    <h3>Product & Startup Studio</h3>
+                                    <p class="faded">Aug 23 — May 24</p>
+                                </div>
                                 <p>Cornell Tech, NYC</p>
-                                <p>(Aug 2023 — May 2024)</p>
                             </div>
-                            <div class="degree">
-                                <h3>Interaction Design</h3>
+                            <div class="degree block">
+                                <div>
+                                    <h3>Interaction Design</h3>
+                                    <p class="faded">Feb 22 — Jul 22</p>
+                                </div>
                                 <p>Instituto Tramontana, Madrid</p>
-                                <p>(Feb 2022 — Jul 2022)</p>
                             </div>
-                            <div class="degree">
-                                <h3>Business Administration & International Studies</h3>
+                            <div class="degree block">
+                                <div>
+                                    <h3>Business & International Studies</h3>
+                                    <p class="faded">Sep 16 — Jun 21</p>
+                                </div>
                                 <p>Carlos III University, Madrid</p>
-                                <div><img src="assets/premium-badge.png" alt="badge icon"><p>Excellence Scholarship</p></div>
-                                <p>(Sep 2016 — Jun 2021)</p>
+                                <div class="badge"><img src="assets/premium-badge.png" alt="badge icon"><p>Excellence Scholarship</p></div>
                             </div>
-                            <div class="degree">
-                                <h3>Designing Product Families</h3>
+                            <div class="degree block">
+                                <div>
+                                    <h3>Designing Product Families</h3>
+                                    <p class="faded">Feb 21 — May 21</p>
+                                </div>
                                 <p>MIT Professional Education, online</p>
-                                <div><img src="assets/premium-badge.png" alt="badge icon"><p>Santander Bank Scholarship</p></div>
-                                <p>(Feb 2021 — May 2021)</p>
+                                <div class="badge"><img src="assets/premium-badge.png" alt="badge icon"><p>Santander Bank Scholarship</p></div>
                             </div>
-                            <div class="degree">
-                                <h3>Business, Sociology and Law [Erasmus]</h3>
+                            <div class="degree block">
+                                <div>
+                                    <h3>Business, Sociology and Law</h3>
+                                    <p class="faded">Sep 18 — May 19</p>
+                                </div>
                                 <p>Trinity College, Dublin</p>
-                                <p>(Sep 2018 — May 2019)</p>
                             </div>
-                            <div class="degree">
-                                <h3>Future Leaders Program</h3>
+                            <div class="degree block">
+                                <div>
+                                    <h3>Future Leaders Program</h3>
+                                    <p class="faded">Nov 19 — Apr 20</p>
+                                </div>
                                 <p>ThePowerMBA, online</p>
-                                <div><img src="assets/premium-badge.png" alt="badge icon"><p>Full Scholarship</p></div>
-                                <p>(Nov 2019 — Apr 2020)</p>
+                                <div class="badge"><img src="assets/premium-badge.png" alt="badge icon"><p>Full Scholarship</p></div>
                             </div>
                         </section>
                     </section>
 
-                    <section id="skills" class="block">
-                        <h2>Design Skills</h2>
+                    <section id="skills">
+                        <h2 class="block">Design Skills</h2>
                         <section>
-                            <div>
+                            <div class="block">
                                 <h3>Low- to High-Fidelity Design</h3>
-                                <p>Figma, Balsamiq</p>
+                                <p class="faded">Figma, Balsamiq</p>
                             </div>
-                            <div>
+                            <div class="block">
                                 <h3>Product Definition & UX Mapping</h3>
                             </div>
-                            <div>
+                            <div class="block">
                                 <h3>Information Architecture</h3>
                             </div>
-                            <div>
-                                <h3>User Story & Roadmap Mapping</h3>
-                                <p>Productboard</p>
+                            <div class="block">
+                                <h3>User Story & Roadmapping</h3>
+                                <p class="faded">Productboard</p>
                             </div>
-                            <div>
+                            <div class="block">
                                 <h3>Frontend Programming</h3>
-                                <p>JS, CSS, HTML</p>
+                                <p class="faded">JS, CSS, HTML</p>
                             </div>
-                            <div>
+                            <div class="block">
                                 <h3>User Research</h3>
                             </div>
-                            <div>
+                            <div class="block">
                                 <h3>Analytics</h3>
-                                <p>Hotjar, Amplitude, Google Analytics, Graphext</p>
+                                <p class="faded">Hotjar, Amplitude, Google Analytics, Graphext</p>
                             </div>
-                            <div>
+                            <div class="block">
                                 <h3>Data Visualization</h3>
                             </div>
                         </section>
@@ -240,50 +259,56 @@
 
                     <section id="references" class="block">
                         <h2>What others say...</h2>
-                        <section class="cols">
-                            <blockquote>
-                                <p>My dear Cris, seeing you grow as a professional and as a person was not only a source of pride, but also therapeutic. You have helped me more than I have helped you. Audentes fortuna iuvat 🖖</p>
-                                <cite>
-                                    <p>— David Bonilla, founder of Manfred [Jan 2024]</p>
-                                    <a href="https://x.com/david_bonilla/status/1743924107824005190" target="_blank">Read live ↗</a>
-                                </cite>
-                            </blockquote>
-                            <blockquote>
-                                <p>I hope we can all go around the world generating the same as @crismiquelg today at her farewell to work... Impossible to come close to her level in any aspect... Hoping to get her back from the US as soon as possible.</p>
-                                <cite>
-                                    <p>— Diego Mariño, founder of Abiquo and Ducksboard [Jun 2023]</p>
-                                    <a href="https://x.com/diegomarino/status/1674465623139659777" target="_blank">Read live ↗</a>
-                                </cite>
-                            </blockquote>
-                            <blockquote>
-                                <p>She has been my mentor, who has taught me everything, who has supported me and believed in me (when I didn't even believe in myself). One of those people who move the needle of life</p>
-                                <cite>
-                                    <p>— Antonio Rodríguez, marketer at Deiser [Jun 2023]</p>
-                                    <a href="https://x.com/AntonioRoLo_/status/1674858403246530572" target="_blank">Read live ↗</a>
-                                </cite>
-                            </blockquote>
-                            <blockquote>
-                                <p>The work that she has been doing these days @crismiquelg helping us in communication of #T3chFest2023 is enormous. Thank you, thank you, thank you. Looking forward to continue doing things together 🥺 soon.</p>
-                                <cite>
-                                    <p>— Mario Montes, Software Engineer at Awtomic [Mar 2023]</p>
-                                    <a href="https://x.com/mariomnts/status/1631697726113972237" target="_blank">Read live ↗</a>
-                                </cite>
-                            </blockquote>
-                            <blockquote>
-                                <p>Possibly the person with the most potential we have found in Start UC3M. Brilliant student who seeks to grow and improve as a person and professional every day. He has taken advantage of every opportunity he has had to show that he is ahead of his age group with self-confidence, enthusiasm and a lot of responsibility. She has everything to become whatever she wants.</p>
-                                <cite>
-                                    <p>— Yago Cousiño, CEO at Kaantera [Aug 2019]</p>
-                                    <a href="https://www.linkedin.com/in/cristinamiquelgarrido/" target="_blank">Read live ↗</a>
-                                </cite>
-                            </blockquote>
-                            <blockquote>
-                                <p>You are an example of perseverance and humility. At Start UC3M we believe in meritocracy and that you can learn by doing. She has taken advantage of all the opportunities she has been given to keep advancing and improving. Age should never be a problem for anyone to advance in their career and I hope that she is not hindered by that nonsense, as she is much more responsible, organized and mature than many people her age.</p>
-                                <cite>
-                                    <p>— Carmen Fernández, Strategic & Product Design at Redbility [Mar 2018]</p>
-                                    <a href="https://www.linkedin.com/in/cristinamiquelgarrido/" target="_blank">Read live ↗</a>
-                                </cite>
-                            </blockquote>
-                        </section>
+                        
+                        <div class="testimonial-carousel">
+                            <div class="testimonial-quotes">
+                                <div class="testimonial-quote">
+                                    <blockquote>Seeing you grow as a professional and as a person was not only a source of pride, but also therapeutic. You have helped me more than I have helped you. Audentes fortuna iuvat 🖖</blockquote>
+                                    <cite>
+                                        <h3>David Bonilla</h3>
+                                        <p>founder at Manfred</p>
+                                    </cite>
+                                </div>
+                                <div class="testimonial-quote">
+                                    <blockquote>I hope we can all go around the world generating the same as @crismiquelg today at her farewell to work... Impossible to come close to her level in any aspect... Hoping to get her back from the US as soon as possible.</blockquote>
+                                    <cite>
+                                        <h3>Diego Mariño</h3>
+                                        <p>founder of Abiquo and Ducksboard</p>
+                                    </cite>
+                                </div>
+                                <div class="testimonial-quote">
+                                    <blockquote>She has been my mentor, who has taught me everything, who has supported me and believed in me (when I didn't even believe in myself). One of those people who move the needle of life.</blockquote>
+                                    <cite>
+                                        <h3>Antonio Rodríguez</h3>
+                                        <p>marketer at Deiser</p>
+                                    </cite>
+                                </div>
+                                <div class="testimonial-quote">
+                                    <blockquote>Possibly the person with the most potential we found in Start. She seeks to grow and improve as a person and professional with self-confidence, enthusiasm and responsibility. She has everything to become whatever she wants.</blockquote>
+                                    <cite>
+                                        <h3>Yago Cousiño</h3>
+                                        <p>CEO at Kaantera</p>
+                                    </cite>
+                                </div>
+                                <div class="testimonial-quote">
+                                    <blockquote>The work that she has been doing these days in communication of #T3chFest2023 is enormous. Thank you, thank you, thank you. Looking forward to continue doing things together soon.</blockquote>
+                                    <cite>
+                                        <h3>Mario Montes</h3>
+                                        <p>Software Engineer at Awtomic</p>
+                                    </cite>
+                                </div>
+                                <div class="testimonial-quote">
+                                    <blockquote>She is an example of perseverance and humility, has taken advantage of all the opportunities she has been given to keep advancing and improving, and is much more responsible, organized and mature than many people her age.</blockquote>
+                                    <cite>
+                                        <h3>Carmen Fernández</h3>
+                                        <p>Strategic Product Design, Redbility</p>
+                                    </cite>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-nav"></div>
+                        </div>
+                        
                     </section>
                 </section>
                 <a href="https://drive.google.com/file/d/1Lv98thY3aKb2KHX38pQKLrcy69xvgJcE/view?usp=sharing" target="_blank" class="a-button"><img src="assets/download.png" alt="download icon"><p>Download Resume</p></a>
@@ -291,11 +316,11 @@
 
             <section id="work">
                 <section>
-                    <h1>Case Studies</h1>
+                    <h1 class="block">Case Studies</h1>
                     <div class="case__study block"></div>
                 </section>
                 <section>
-                    <h1>Other Projects</h1>
+                    <h1 class="block">Other Projects</h1>
                     <div class="projects block"></div>
                 </section>
             </section>
@@ -317,5 +342,11 @@
         <footer class="dark-section">
             <span class="block">Crafted & coded by Cristina Miquel Garrido © 2024</span>
         </footer>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+
     </body>
 </html>

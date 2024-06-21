@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${project.cover__img}" alt="${project.title}">
                         <section class="project-description">
                             <h2>${project.title}</h2>
-                            <time datetime="${project.date}">${project.date}</time>
                             <p>${project.briefing}</p>
                             <section class="pills">
                                 <div>${project.tag1}</div>
@@ -43,6 +42,47 @@ document.addEventListener('DOMContentLoaded', function() {
             container.appendChild(projectElement);
         });
     }
+
+        // REVIEWS CAROUSEL
+        const quotesContainer = document.querySelector('.testimonial-quotes');
+        const quotes = document.querySelectorAll('.testimonial-quote');
+        const navContainer = document.querySelector('.testimonial-nav');
+    
+        let currentIndex = 0;
+        const totalQuotes = quotes.length;
+        const quotesPerView = 3;
+
+        for (let i = 0; i < Math.ceil(totalQuotes / quotesPerView); i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('testimonial-dot');
+            if (i === 0) {
+                dot.classList.add('active');
+            }
+            dot.addEventListener('click', () => {
+                currentIndex = i * quotesPerView;
+                updateCarousel();
+            });
+            navContainer.appendChild(dot);
+        }
+    
+        const dots = document.querySelectorAll('.testimonial-dot');
+    
+        function updateCarousel() {
+            const offset = -currentIndex * (100 / quotesPerView);
+            quotesContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                if (index === Math.floor(currentIndex / quotesPerView)) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        updateCarousel();
 
 
 // INITIATE INTERSECTION OBSERVER

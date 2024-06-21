@@ -139,6 +139,10 @@
         line-height: 1.5;
     }
 
+    #about p.highlight {
+        padding: 10%;
+    }
+
     p.highlight {
         font-size: 48px;
     }
@@ -171,6 +175,7 @@
     html {
         scroll-behavior: smooth;
         overflow-x:hidden;
+        background-color: var(--black);
     }
 
     .projectcontent>section {
@@ -297,7 +302,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 10vh;
+        gap: 20vh;
     }
 
     #skills section {
@@ -503,13 +508,14 @@
         border-top: 1px solid var(--white);
         border-bottom: 1px solid var(--white);
         gap: var(--gutter);
-        justify-content: space-between;
     }
 
-    .degree div, .panel>section div {
+    div.badge, .panel>section div {
         display: flex;
         flex-direction: row;
         gap: var(--gutter);
+        justify-content: left;
+        align-items: center;
     }
 
     cite {
@@ -540,6 +546,17 @@
         gap: 32px;
     }
 
+        .projects p, .case__study p, .projects .pills, .case__study .pills {
+            font-size: 16px;
+        }
+
+        .projects h2, .case__study h2 {
+            font-size: 32px;
+            padding-bottom: 0px;
+            line-height: 1;
+        }
+
+
     .projects a, .case__study a  {
         height: 100%;
     }
@@ -561,7 +578,7 @@
     .project-card img {
         width: 100%;
         object-fit: cover;
-        min-height: 264px;
+        min-height: 200px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
     }
@@ -762,7 +779,7 @@
 
     /* animations */
 
-    .block /*, #exploration, #lowfi, #midfi, #highfi, #reflection*/ {
+    .block {
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
     }
@@ -827,8 +844,23 @@
 
         /* text */
 
+        
+        header h1:nth-of-type(2) {
+            font-size: 12vw;
+        }
+
         p.highlight {
-            font-size: 56px;
+            font-size: 48px;
+            font-weight: 300;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #contact p.highlight {
+            padding-top: 24px;
+            height: fit-content;
         }
 
         #contact .highlight {
@@ -837,11 +869,11 @@
         }
 
         header h1:first-of-type {
-            font-size: calc(var(--font-size)*6.3);
+            font-size: 9.5vw;
         }
 
         header h2 {
-            font-size: calc(var(--font-size)*2.5);
+            font-size: 4vw;
             translate: 0px -16px;
         }
 
@@ -868,8 +900,12 @@
 
         footer {
             text-align: center;
-            padding: 5% 10% 32px 10%;
+            padding: 5% 10% 15vh 10%;
+            margin-left: 10%;
+            margin-right: 10%;
         }
+
+
 
         /* sections */
 
@@ -877,14 +913,14 @@
             padding: 40px 10% 40px 10%;
         }
 
-        #about, #work {
+        #work {
             padding: 10%;
         }
 
         .projects, .case__study {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 5%;
+            gap: 2%;
         }
 
         .projectpage {
@@ -912,12 +948,12 @@
 
         .nav-top {
             position: fixed;
-            top: 40px;
+            top: 24px;
         }
 
         .nav-bottom {
             position: fixed;
-            bottom: 40px;
+            bottom: 24px;
             display: flex;
             flex-direction: row;
         }
@@ -971,6 +1007,30 @@
 
         #skills section {
             grid-template-columns: repeat(3, 1fr);
+        }
+
+        #experience, #education, #skills {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        #education p, #skills p, #skills h3, #education h3 {
+            font-size: 16px;
+        }
+
+        .degree div:first-of-type {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faded {
+            opacity: 50%;
+        }
+
+        #references h2 {
+            text-align: center;
         }
 
         /* components */
@@ -1043,6 +1103,75 @@
 
         .a-button {
             width: fit-content;
+        }
+
+        /* carousel */
+
+        .testimonial-carousel {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+
+        .testimonial-quotes {
+            display: flex;
+            transition: transform 0.3s ease;
+            flex-direction: row;
+            gap: 16px
+        }
+
+        .testimonial-quote {
+            flex: 0 0 33.333%;
+            display: flex;
+            flex-direction: column;
+            width: 33%;
+            border: 1px solid var(--white);
+            border-radius: 16px;
+            padding: 16px 16px 20px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+            .testimonial-quote blockquote {
+                border: none;
+                font-family: "Instrument Serif", "serif";
+                font-size: 24px;
+                padding-top: 8px;
+            }
+
+            .testimonial-quote cite {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                padding-top: 16px;
+                border-top: 1px solid var(--white);
+                font-size: 14px;
+            }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+            gap: 8px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--white);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .testimonial-dot:hover {
+            background-color: greenyellow;
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--red);
         }
 
     }
