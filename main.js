@@ -17,6 +17,23 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error loading the projects:', error));
 
+//MOBILE MENU
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
+menuToggle.addEventListener('click', function() {
+    mobileMenu.classList.toggle('open');
+});
+
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+        mobileMenu.classList.remove('open');
+    });
+});
+
 
 // ADD PROJECTS TO DOM
     function addProjects(projects, container) {
@@ -50,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         let currentIndex = 0;
         const totalQuotes = quotes.length;
-        const quotesPerView = 3;
+        const quotesPerView = window.innerWidth <= 768 ? 1 : 3;
 
         for (let i = 0; i < Math.ceil(totalQuotes / quotesPerView); i++) {
             const dot = document.createElement('div');
@@ -70,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateCarousel() {
             const offset = -currentIndex * (100 / quotesPerView);
             quotesContainer.style.transform = `translateX(${offset}%)`;
+            updateDots();
         }
 
         function updateDots() {
@@ -88,13 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // INITIATE INTERSECTION OBSERVER
     function initIntersectionObserver() {
         const blocks = document.querySelectorAll('.block');
-        /*const sections = document.querySelectorAll('#exploration, #lowfi, #midfi, #highfi, #reflection');*/
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                } else {
+                    entry.target.classList.remove('visible');
                 }
             });
         }, {
@@ -280,15 +298,4 @@ function updateNav() {
 
 document.addEventListener('DOMContentLoaded', function() {
     updateNav();
-});
-
-
-//MOBILE MENU
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    menuToggle.addEventListener('click', function() {
-        mobileMenu.classList.toggle('open');
-    });
 });
