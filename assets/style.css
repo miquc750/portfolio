@@ -207,7 +207,6 @@
         position: fixed;
         top: 0;
         padding: 32px 0 32px 0;
-        background-color: var(--black);
         min-width: 92%;
         max-width: 100%;
         display: flex;
@@ -216,8 +215,9 @@
         align-items: center;
     }
 
-    .projectpage .nav-top>li {
+    .projectpage .nav-top>li:not(:first-child) {
         padding: 0;
+        display: none;
     }
 
     .projectpage .nav-top>div {
@@ -226,7 +226,7 @@
 
     .nav-top, .nav-bottom {
         width: 80vw;
-        z-index: 4;
+        z-index: 5;
     } 
 
     .nav-top li, .nav-bottom li {
@@ -234,15 +234,25 @@
     }
 
     .navicon {
-        width: 40px;
-        height: 40px;
         background-color: var(--red);
         border-radius: 100px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .projectpage .navicon a {
+        min-width: 56px;
+        width: 56px;
+        max-width: 56px;
+        height: 56px;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         font-style: unset;
+        text-align: center;
     }
 
     .navicon a {
@@ -407,6 +417,7 @@
             height: 2px;
             background-color: var(--black);
             margin: 5px 0;
+            z-index: 6;
         }
 
         .mobile-menu {
@@ -415,12 +426,12 @@
             inset: 0;
             width: 100%;
             background-color: var(--red);
-            z-index: 2;
         }
 
         .mobile-menu.open {
             display: block;
             overflow-y: scroll;
+            z-index: 4;
         }
         
         .mobile-menu ul {
@@ -1166,6 +1177,14 @@
 
     /* components */
 
+    .projectpage .nav-top>li:not(:first-child) {
+        display: block;
+    }
+
+    .mobile-menu.open {
+        display: none;
+    }
+
     .mobile-menu {
         display: none;
     }
@@ -1209,6 +1228,7 @@
         max-width: 80%;
         width: 80%;
         min-width: 80%;
+        background-color: var(--black);
     }
 
     .projectpage .nav-top>div {
