@@ -416,6 +416,7 @@
 
         .mobile-menu.open {
             display: block;
+            overflow-y: scroll;
         }
         
         .mobile-menu ul {
@@ -423,23 +424,43 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            padding: 20% 16px 40px 16px;
+            padding: 20% 16px 16px 16px;
         }
         
         .mobile-menu ul li {
-            padding-top: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--black);
+            padding-top: 8px;
+            padding-bottom: 8px;
         }
 
         .mobile-menu a {
             font-family: "Instrument Serif", serif;
-            font-size: 64px;
+            font-size: 56px;
         }
         
         .mobile-menu ul li:last-child {
             border-bottom: none;
         }
+
+        .mobile-menu .accordion {
+            border: none;
+            padding: 0;
+            color: var(--black);
+        }
+
+        .mobile-menu .accordion img {
+            filter: brightness(0%);
+        }
+
+        .mobile-menu .panel a {
+            padding: 0;
+            font-size: 32px;
+        }
+
+        .mobile-menu .panel {
+            border-top: 1px solid var(--black);
+            padding: 0 0 0 32px;
+        }
+
 
         /* */
 
