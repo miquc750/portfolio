@@ -437,6 +437,7 @@
             display: block;
             overflow-y: scroll;
             z-index: 4;
+            height: 100vh;
         }
         
         .mobile-menu ul {
@@ -1013,12 +1014,11 @@
         display: flex;
         transition: transform 0.3s ease;
         flex-direction: row;
-        width: 100%;
         gap: 16px
     }
 
     .testimonial-quote {
-        flex: 0 0 33.333%;
+        flex: 0 0 calc(100% / 3 - 16px);
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
@@ -1508,6 +1508,6 @@
 
 @media (max-width: 768px) {
     .testimonial-quote {
-        flex: 1 0 100%;
+        flex: 0 0.007 100%;
     }
 }
