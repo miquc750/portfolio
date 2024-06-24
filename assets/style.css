@@ -414,6 +414,7 @@
             background-color: var(--red);
             border-radius: 8px;
             border: 1px solid var(--black);
+            z-index: 6;
         }
 
         .menu-toggle span {
@@ -425,7 +426,11 @@
             z-index: 6;
         }
 
-        .mobile-menu {
+        .projectpage .nav-top {
+            z-index: 6;
+        }
+
+        .mobile-menu, .projectpage .mobile-menu {
             display: none;
             position: fixed;
             inset: 0;
@@ -433,14 +438,14 @@
             background-color: var(--red);
         }
 
-        .mobile-menu.open {
+        .mobile-menu.open, .projectpage .mobile-menu.open {
             display: block;
             overflow-y: scroll;
-            z-index: 4;
+            z-index: 5;
             height: 100vh;
         }
         
-        .mobile-menu ul {
+        .mobile-menu ul, .projectpage .mobile-menu ul {
             list-style-type: none;
             padding: 0;
             display: flex;
@@ -448,24 +453,29 @@
             padding: 20% 16px 16px 16px;
         }
         
-        .mobile-menu ul li {
+        .mobile-menu ul li, .projectpage .mobile-menu ul li {
             padding-top: 8px;
             padding-bottom: 8px;
         }
 
-        .mobile-menu a {
+        .mobile-menu a, .projectpage .mobile-menu a {
             font-family: "Instrument Serif", serif;
             font-size: 56px;
+            color: var(--black);
         }
         
         .mobile-menu ul li:last-child {
             border-bottom: none;
         }
 
-        .mobile-menu .accordion {
+        .mobile-menu .accordion, .projectpage .mobile-menu .accordion {
             border: none;
             padding: 0;
             color: var(--black);
+        }
+
+        .projectpage ul .panel {
+            padding-top: 0;
         }
 
         .mobile-menu .accordion img {
@@ -915,6 +925,7 @@
                 width: auto;
                 max-width: 700px;
                 max-height: 80vh;
+                padding: 32px 16px 32px 16px;
             }
             
             #caption {
@@ -931,8 +942,8 @@
             
             .close {
                 position: absolute;
-                top: 32px;
-                right: 64px;
+                top: 8px;
+                right: 16px;
                 color: var(--red);
                 font-size: 56px;
                 font-weight: bold;
@@ -1044,7 +1055,10 @@
             gap: 8px;
             padding-top: 16px;
             border-top: 1px solid var(--white);
-            font-size: 14px;
+        }
+
+        .testimonial-quote cite h3, .testimonial-quote cite p {
+            font-size: 16px;
         }
 
     .testimonial-nav {
@@ -1390,6 +1404,10 @@
         height: 15vw;
     }
 
+    #filmmaking {
+        padding-top: 64px;
+    }
+
     /* components */
 
     .projectpage .nav-top>li:not(:first-child) {
@@ -1499,8 +1517,10 @@
         gap: 16px;
     }
 
-
-
+    .close {
+        top: 32px;
+        right: 64px;
+    }
 }
 
 
