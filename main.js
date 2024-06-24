@@ -129,6 +129,29 @@ mobileMenuLinks.forEach(link => {
     }
 /*});*/
 
+// IMG MODAL
+
+var modal = document.getElementById("modal");
+
+var images = document.querySelectorAll('#photography .gallery img');
+var modalImg = document.getElementById("modal-img");
+var captionText = document.getElementById("caption");
+
+images.forEach(image => {
+    image.addEventListener('click', function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    });
+});
+
+var span = document.getElementById("close");
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+
 // SCROLL FUNCTIONALITY FOR DARK SECTIONS
 var navTop = document.querySelector('.nav-top');
 var navBottom = document.querySelector('.nav-bottom');
@@ -299,3 +322,6 @@ function updateNav() {
 document.addEventListener('DOMContentLoaded', function() {
     updateNav();
 });
+
+
+
