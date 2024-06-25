@@ -42,7 +42,7 @@ mobileMenuLinks.forEach(link => {
             projectElement.classList.add('project', 'project-card');
 
             projectElement.innerHTML = `
-                <a href="${project.url}">
+                <a href="${project.url}" class="block">
                     <div class="project-card">
                         <img src="${project.cover__img}" alt="${project.title}">
                         <section class="project-description">
