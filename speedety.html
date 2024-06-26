@@ -1,28 +1,139 @@
 <!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cristina Miquel Garrido / Speedety</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
         <link href="assets/reset.css" rel="stylesheet">
-		<link href="assets/style.css" rel="stylesheet">
+        <link href="assets/style.css" rel="stylesheet">
         <script defer src="main.js"></script>
+        <style>
+            body.projectpage {
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+            body.projectpage.loaded {
+                opacity: 1;
+            }
+        </style>
     </head>
-    
-    <body>
+
+    <body class="projectpage">
         <header>
+            <ul class="nav-top">
+                <li>
+                    <button class="menu-toggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </li>
+                <li><a href="/#about">about me</a></li>
+                <div></div>
+                <li><a href="/#work">work</a></li>
+                <div></div>
+                <li class="navicon"><a href="/#home">CM</a></li>
+                <div></div>
+                <li><a href="/#play">play</a></li>
+                <div></div>
+                <li><a href="/#contact">contact</a></li>
+            </ul>
             <h1>Speedety</h1>
-            <section>
-                <div>branding</div>
-                <div>A/B testing</div>
+            <section class="tldr">
+                <p class="tldrpart">Ocober — November 2023</p>
+                <section class="pills tldrpart">
+                    <div>branding</div>
+                    <div>UI</div>
+                </section>
+                <p class="tldrpart">A rental service for all-time car lovers who want to stop watching and start driving. </p>
             </section>
-            <div>October 2023</div>
+            <nav class="mobile-menu">
+                <ul>
+                    <a href="#home"><li>home</li></a>
+                    <a href="#about"><li>about</li></a>
+                    <li>
+                        <button class="accordion">
+                            <a href="#work">work</a>
+                            <img src="assets/plus.png" class="accordion-indicator" alt="Expand">
+                        </button>
+                        <ul class="panel">
+                            <a href="cristinamiquel.com/koach"><li class="subnav">— KOACH.</li></a>
+                            <a href="cristinamiquel.com/tabty"><li class="subnav">— Tabty</li></a>
+                            <a href="cristinamiquel.com/speedety"><li class="subnav">— Speedety</li></a>
+                            <a href="cristinamiquel.com/spotify-connect"><li class="subnav">— Spotify Connect</li></a>
+                            <a href="cristinamiquel.com/nomadlandia"><li class="subnav">— Nomadlandia</li></a>
+                            <a href="cristinamiquel.com/gastronomika"><li class="subnav">— Gastronomika</li></a>
+                        </ul>
+                    </li>
+                    <a href="#play"><li>play</li></a>
+                    <a href="#contact"><li>contact</li></a>
+                </ul>
+            </nav>
         </header>
 
-        <main>
-            <p>"Speedety: Crafting Vintage Elegance Through Branding" is a standout project from my MPS in Communication Design at Parsons, showcasing how strategic branding can transform the vintage car rental experience. This initiative doesn't just offer a service; it builds a brand that fuses the charm of classic automobile culture with modern design elegance.</p>            
-            <p>The project begins with an exploration of the unique stories of vintage cars, where design, luxury, and innovation converge. Speedety's branding strategy makes these narratives central, enhancing the user's emotional and visual connection to the era of classic motoring. The brand identity, shaped through extensive research and creative exploration, appeals to both nostalgia and contemporary taste.</p>
-            <p>Central to Speedety's effort is its visual identity, which includes a carefully chosen logo, color palette, typography, and imagery that evoke vintage luxury and sophistication. The website and user interface design provide a seamless experience, reinforcing Speedety's commitment to merging timeless elegance with modern usability. This project not only revisits the past but also secures Speedety's place as a curator of unique, memorable experiences in the car rental market.</p>            
+        <main class="assets">
+            <section class="branding">
+                <img src="assets/speedety/speedety.png" alt="speedety header image">
+                <img src="assets/speedety/brand-intro.png" alt="Speedety's brand statement">
+                <img src="assets/speedety/principles.png" alt="Speedety's design principles">
+                <img src="assets/speedety/screen1.jpg" alt="Speedety's homepage">
+                <img src="assets/speedety/screen2.png" alt="Speedety's rental page">
+                <img src="assets/speedety/typography.png" alt="Speedety's fonts">
+                <img src="assets/speedety/colors.gif" alt="Speedety's brand colors">
+                <div>
+                    <img src="assets/speedety/portrait1.jpg" alt="Speedety's portrait">
+                    <img src="assets/speedety/portrait2.jpg" alt="Speedety's portrait">
+                </div>
+                <img src="assets/speedety/portrait3.jpg" alt="Speedety's portrait">
+                <img src="assets/speedety/logo.png" alt="Speedety's logo">
+                <div>
+                    <img src="assets/speedety/mug.jpg" alt="Speedety's mug">
+                    <img src="assets/speedety/coaster.jpg" alt="Speedety's coaster">
+                </div>
+                <img src="assets/speedety/logo-combinations.png" alt="Speedety's logo combinations">
+                <img src="assets/speedety/totebag-1.jpg" alt="Speedety's totebags">
+                <img src="assets/speedety/totebag-2.jpg" alt="Speedety's totebags">
+                <img src="assets/speedety/magazine.jpg" alt="Speedety's magazine">
+                <img src="assets/speedety/giftcard.jpg" alt="Speedety's giftcards">
+            </section>
+
+
+            <!--<ul class="projectnav">
+                <li><h2>KOACH.</h2></li>
+                <li><a href="#exploration">Exploration</a></li>
+                <li><a href="#lowfi">Low-Fi</a></li>
+                <li><a href="#midfi">Mid-Fi</a></li>
+                <li><a href="#highfi">High-Fi</a></li>
+            </ul>-->
+            
+            <section class="projectcontent">
+            </section>
+        
         </main>
 
-        <footer>Crafted & coded by Cristina Miquel</footer>
+        <footer>
+            <section id="contact">
+                <section>
+                    <p>don't be shy</p>
+                    <p class="highlight">say hi!</p>
+                </section>
+                <section class="social-links">
+                    <a href="mailto:crismiquelg@gmail.com" target="_blank">e-mail crismiquelg@gmail.com ↗</a>
+                    <a href="https://www.linkedin.com/in/cristinamiquelgarrido/" target="_blank">linkedin /cristinamiquelgarrido ↗</a>
+                    <a href="https://x.com/crismiquelg" target="_blank">twitter /crismiquelg ↗</a>
+                    <a href="https://github.com/miquc750" target="_blank">github /miquc750 ↗</a>
+                </section>
+            </section>
+            Crafted & coded by Cristina Miquel Garrido © 2024
+            <a href="#" class="top"><div>↑</div></a>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const body = document.querySelector('body');
+                body.classList.add('loaded');
+            });
+        </script>
     </body>
 </html>
