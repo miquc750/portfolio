@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --black: #000000;
@@ -7,7 +7,7 @@
     --white: #FFFFFF;
     --radius: 16px;
     --gutter: 8px;
-    --font-mono: "Azeret Mono", monospace;
+    --font-sans: "Raleway", sans-serif;
     --font-serif: "Instrument Serif", serif;
     --font-size: 24px;
     --weight-regular: 300;
@@ -26,13 +26,13 @@
     }
 
     h1, .projectpage h1 {
-        font-family:  "Instrument Serif", "serif";
+        font-family: var(--font-serif);
         font-size: calc(var(--font-size)*2.5);
         padding-bottom: var(--gutter);
     }
 
     h2 {
-        font-family:  "Instrument Serif", "serif";
+        font-family: var(--font-serif);
         font-size: 48px;
         padding-bottom: var(--gutter);
     }
@@ -42,7 +42,7 @@
         }
 
     h3 {
-        font-family: "Roboto", "sans-serif";
+        font-family: var(--font-sans);
         font-weight: 600;
         font-size: 18px;
         text-transform: uppercase;
@@ -56,13 +56,13 @@
         }
 
     h4 {
-        font-family:  "Roboto", "sans-serif";
+        font-family: var(--font-sans);
         font-weight: 600;
         font-size: 18px;
     }
 
     p, a, time {
-        font-family:  "Roboto", "sans-serif";
+        font-family: var(--font-sans);
         font-size: 18px;
     }
 
@@ -85,15 +85,15 @@
     }
 
     header h1 {
-        font-family: "Roboto", "Sans-serif";
+        font-family: "Raleway", sans-serif;
         font-weight: 900;
         text-transform: uppercase;
         z-index: 0;
-        line-height: 0.70;
+        line-height: 0.6;
     }
 
     header h1:first-of-type {
-        font-size: 20vw;
+        font-size: 19vw;
         text-wrap: wrap;
         max-width: 100%;
         line-height: 1;
@@ -101,14 +101,12 @@
     }
 
     header h1:nth-of-type(2) {
-        font-size: 25.5vw;
+        font-size: 22.5vw;
     }
 
     header h2 {
-        font-family: "Roboto", "Sans-serif";
-        font-family: "Instrument Serif", "serif";
+        font-family: var(--font-serif);
         font-style: italic;
-        /*font-size: calc(var(--font-size)*2.5);*/
         font-size: 36px;
         z-index: 1;
         text-shadow: 
@@ -120,7 +118,6 @@
         -1px 0 0 var(--red), 
         0 1px 0 var(--red), 
         0 -1px 0 var(--red);
-        /*translate: 0px -16px;*/
         translate: 0px -4px;
     }
 
@@ -131,14 +128,14 @@
     }
 
     .nav-top a, .nav-bottom a {
-        font-family: "Instrument Serif", "serif";
+        font-family: var(--font-serif);
         font-size: var(--font-size);
         font-style: italic;
         font-weight: 500;
     }
 
     blockquote>p {
-        font-family: "Instrument Serif", serif;
+        font-family: var(--font-serif);
         font-style: italic;
         padding-bottom: calc(var(--gutter)*2);
         font-size: var(--font-size);
@@ -157,7 +154,7 @@
         padding-bottom: 32px;
         text-decoration: overline;
         padding-top: 32px;
-        font-family: "Instrument Serif", serif;
+        font-family: var(--font-serif);
     }
 
     .social-links {
@@ -386,7 +383,7 @@
         color: var(--white);
         padding: 40px 16px 40px 16px;
         text-align: center;
-        font-family: "Instrument Serif";
+        font-family: var(--font-serif);
         font-size: 22px;
         border-top: 1px solid var(--white);
         text-align: left;
@@ -459,7 +456,7 @@
         }
 
         .mobile-menu a, .projectpage .mobile-menu a {
-            font-family: "Instrument Serif", serif;
+            font-family: var(--font-serif);
             font-size: 56px;
             color: var(--black);
         }
@@ -678,7 +675,7 @@
         padding: 12px 24px 12px 24px;
         border: solid 1px var(--white);
         border-radius: 32px;
-        font-family: "Roboto", sans-serif;
+        font-family: var(--font-sans);
         text-wrap: nowrap;
     }
 
@@ -755,7 +752,7 @@
         }
 
         .projectcontent li {
-            font-family: "Roboto", sans-serif;
+            font-family: var(--font-sans);
             font-size: 18px;
             font-weight: 300;
             list-style-type:decimal-leading-zero;
@@ -917,7 +914,7 @@
             left: 10px;
             background: var(--white);
             color: var(--black);
-            font-family:  "Roboto", "sans-serif";
+            font-family: var(--font-sans);
             font-size: 16px;
             padding: 0px 5px 5px 5px;
             border-bottom: 12px solid var(--white);
@@ -970,7 +967,7 @@
                 text-align: center;
                 color: var(--white);
                 padding-top: 24px;
-                font-family: "Roboto", "sans-serif";
+                font-family: var(--font-sans);
                 font-size: 16px;
             }
             
@@ -1078,7 +1075,7 @@
 
         .testimonial-quote blockquote {
             border: none;
-            font-family: "Instrument Serif", "serif";
+            font-family: var(--font-serif);
             font-size: 24px;
             padding-top: 8px;
         }
@@ -1158,7 +1155,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: "Instrument Serif", serif;
+        font-family: var(--font-serif);
         animation: logoload 5s linear;
     }
 
@@ -1188,7 +1185,7 @@
 
     
     header h1:nth-of-type(2) {
-        font-size: 12vw;
+        font-size: 11.9vw;
     }
 
     p.highlight {
@@ -1215,12 +1212,12 @@
     }
 
     header h1:first-of-type {
-        font-size: 9.5vw;
+        font-size: 10vw;
     }
 
     header h2 {
         font-size: 4vw;
-        translate: 0px -16px;
+        translate: 0px 0px;
     }
 
     .assets>section h2 {
