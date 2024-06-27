@@ -1348,6 +1348,7 @@
 
     .assets {
         flex-direction: row;
+        gap: 32px;
     }
 
     .assets>section {
