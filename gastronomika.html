@@ -9,18 +9,11 @@
         <link href="assets/reset.css" rel="stylesheet">
         <link href="assets/style.css" rel="stylesheet">
         <script defer src="main.js"></script>
-        <style>
-            body.projectpage {
-                opacity: 0;
-                transition: opacity 1s ease-in-out;
-            }
-            body.projectpage.loaded {
-                opacity: 1;
-            }
-        </style>
     </head>
 
     <body class="projectpage">
+        <div id="loadingOverlay"></div>
+
         <header>
             <ul class="nav-top">
                 <li>
@@ -167,11 +160,10 @@
             Crafted & coded by Cristina Miquel Garrido © 2024
             <a href="#" class="top"><div>↑</div></a>
         </footer>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const body = document.querySelector('body');
-                body.classList.add('loaded');
-            });
-        </script>
+        <div id="modal" class="modal">
+            <span id="close" class="close">&times;</span>
+            <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+        
     </body>
 </html>

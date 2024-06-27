@@ -1335,6 +1335,10 @@
         position: sticky;
     }
 
+    .projectnav.scrolled {
+        transform: translateY(-100%);
+    }
+
     .projectexplanation {
         flex-direction: row;
     }
