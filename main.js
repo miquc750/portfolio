@@ -61,46 +61,42 @@ mobileMenuLinks.forEach(link => {
     }
 
         // REVIEWS CAROUSEL
-        const quotesContainer = document.querySelector('.testimonial-quotes');
         const quotes = document.querySelectorAll('.testimonial-quote');
-        const navContainer = document.querySelector('.testimonial-nav');
-    
-        let currentIndex = 0;
-        const totalQuotes = quotes.length;
-        const quotesPerView = window.innerWidth <= 768 ? 1 : 3;
+    const navItems = document.querySelectorAll('.nav-item');
+    const dividers = document.querySelectorAll('.divider');
 
-        for (let i = 0; i < Math.ceil(totalQuotes / quotesPerView); i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('testimonial-dot');
-            if (i === 0) {
-                dot.classList.add('active');
-            }
-            dot.addEventListener('click', () => {
-                currentIndex = i * quotesPerView;
-                updateCarousel();
-            });
-            navContainer.appendChild(dot);
-        }
-    
-        const dots = document.querySelectorAll('.testimonial-dot');
-    
-        function updateCarousel() {
-            const offset = -currentIndex * (100 / quotesPerView);
-            quotesContainer.style.transform = `translateX(${offset}%)`;
-            updateDots();
-        }
+    function updateDividers(index) {
+        // Oculta todos los divisores
+        dividers.forEach(divider => divider.style.display = 'none');
 
-        function updateDots() {
-            dots.forEach((dot, index) => {
-                if (index === Math.floor(currentIndex / quotesPerView)) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
+        // Muestra los divisores según el índice activo
+        if (index > 1 && index <= dividers.length + 1) {
+            dividers[index - 2].style.display = 'block';
         }
+        if (index > 1 && index < dividers.length + 1) {
+            dividers[index - 1].style.display = 'block';
+        }
+    }
 
-        updateCarousel();
+    navItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const index = this.getAttribute('data-index');
+
+            // Remove active class from all quotes and nav items
+            quotes.forEach(quote => quote.classList.remove('active'));
+            navItems.forEach(nav => nav.classList.remove('active'));
+
+            // Add active class to the selected quote and nav item
+            quotes[index - 1].classList.add('active');
+            this.classList.add('active');
+
+            // Update dividers
+            updateDividers(Number(index));
+        });
+    });
+
+    // Initialize dividers on page load
+    updateDividers(1);
 
 
 // INITIATE INTERSECTION OBSERVER

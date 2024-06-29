@@ -2,7 +2,8 @@
 
 :root {
     --black: #000000;
-    --grey: #1D1928;
+    --grey: #36333F;
+    --light-grey: #6F6983;
     --red: #AD0900;
     --white: #FFFFFF;
     --radius: 16px;
@@ -54,6 +55,12 @@
             padding-left: 0;
             padding-top: 56px;
         }
+
+        #about h3 {
+            color: var(--light-grey);
+            font-weight: 600;
+        }
+
 
     h4 {
         font-family: var(--font-sans);
@@ -173,7 +180,7 @@
     }
 
     .faded {
-        opacity: 50%;
+        color: var(--light-grey);
     }
 
     /* sections */
@@ -273,22 +280,23 @@
     }
 
     #about {
-        background-color: var(--black);
-        color: var(--white);
+        background-color: var(--white);
+        color: var(--black);
         padding: 72px 16px 72px 16px;
-        background-image: url('/assets/dots.png');
+        /*background-image: url('/assets/dots.png') ;*/
         background-repeat: repeat;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15vh;
+        gap: 8vh;
     }
 
     #work {
         padding: 72px 16px 72px 16px;
-        background-color: var(--red);
+        background-color: var(--black);
         background-image: url('/assets/dots.png');
+        color: var(--white);
         background-repeat: repeat;
         display: flex;
         flex-direction: column;
@@ -324,6 +332,17 @@
         flex-direction: column;
         width: 100%;
         gap: 20vh;
+        border: 1px solid var(--grey);
+        border-radius: 20px;
+        padding: 10%;
+    }
+
+    #about>section:first-of-type {
+        display: flex;
+        flex-direction: row;
+        border: none;
+        justify-content: space-between;
+        padding: 0;
     }
 
     #skills section {
@@ -503,13 +522,12 @@
     }
 
     .accordion {
+        background-color: var(--light-grey);
         color: var(--white);
         cursor: pointer;
         padding: calc(var(--gutter)*3) var(--gutter) calc(var(--gutter)*3) var(--gutter);
         width: 100%;
         text-align: left;
-        border-top: solid 2px var(--white);
-        border-bottom: solid 2px var(--white);
         transition: 0.4s;
         display: flex;
         flex-direction: column;
@@ -553,7 +571,7 @@
         line-height: 1.25;
     }
 
-    .about img, a img, .degree img {
+    a img, .degree img {
         max-height: 24px;
     }
 
@@ -581,7 +599,7 @@
     div.badge, .panel>section div:nth-child(2) {
         display: flex;
         flex-direction: row;
-        gap: var(--gutter);
+        gap: 12px;
         justify-content: left;
         align-items: center;
     }
@@ -599,14 +617,18 @@
     }
 
     .a-button {
-        padding: 16px 24px 16px 24px;
-        border-radius: 12px;
+        padding: 20px 24px 20px 24px;
+        border-radius: 50px;
+        color: var(--white);
         background-color: var(--red);
         width: 100%;
         text-align: center;
         align-items: center;
         justify-content: center;
         transition: 0.4s;
+        max-height: fit-content;
+        min-height: fit-content;
+        height: fit-content;
     }
 
     .a-button:hover {
@@ -635,26 +657,31 @@
         height: 100%;
     }
 
-    .projects a:hover, .case__study a:hover {
+    .projects a:hover img, .case__study a:hover img {
         transform: scale(1.05);
-        font-weight: 300;
+        overflow: hidden;
+        transition: 0.5s linear;
     }
 
     .project-card {
-        background-color: var(--black);
-        color: white;
+        background-color: var(--grey);
+        color: var(--white);
         width: 100%;
-        height: 100%;
+        min-height: 100%;
+        max-height: max-content;
+        height: fit-content;
         border-radius: 20px;
-        border: 1px solid var(--black);
+        overflow: hidden;
     }
 
     .project-card img {
         width: 100%;
         object-fit: cover;
         min-height: 200px;
+        max-height: 200px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
+        overflow: hidden;
     }
 
     .project-description {
@@ -662,6 +689,7 @@
         flex-direction: column;
         gap: calc(var(--gutter)*3);
         padding: 5%;
+        min-height: fit-content;
     }
 
     .pills {
@@ -869,6 +897,8 @@
             display: flex;
             height: fit-content;
             flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
             #publications .slide {
@@ -880,6 +910,7 @@
             flex-direction: column;
             gap: 0;
             height: fit-content;
+            border-radius: 12px;
         }
 
         .slide img, .slide a img {
@@ -920,10 +951,14 @@
             border-bottom: 12px solid var(--white);
             border-left: 12px solid var(--white);
             border-right: 12px solid var(--white);
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            height: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
         }
 
         #photography .slide:hover {
@@ -1045,75 +1080,120 @@
 
     /* carousel */
 
-    .testimonial-carousel {
-        width: 100%;
-        overflow: hidden;
-        margin-top: 32px;
-        margin-bottom: 32px;
-    }
-
-    .testimonial-quotes {
-        display: flex;
-        transition: transform 0.3s ease;
-        flex-direction: row;
-        gap: 16px
-    }
-
-    .testimonial-quote {
-        flex: 0 0 calc(100% / 3 - 16px);
+    #references {
+        padding-left: 10%;
+        padding-right: 10%;
         display: flex;
         flex-direction: column;
-        box-sizing: border-box;
-        width: 33%;
-        border: 1px solid var(--white);
-        border-radius: 16px;
-        padding: 16px 16px 20px 16px;
+        gap: 5vh;
+        align-items: start;
+        transition: linear 0.5s ease-in-out;
+    }
+
+    .testimonial-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-    }
-
-        .testimonial-quote blockquote {
-            border: none;
-            font-family: var(--font-serif);
-            font-size: 24px;
-            padding-top: 8px;
-        }
-
-        .testimonial-quote cite {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            padding-top: 16px;
-            border-top: 1px solid var(--white);
-        }
-
-        .testimonial-quote cite h3, .testimonial-quote cite p {
-            font-size: 16px;
-        }
-
-    .testimonial-nav {
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        gap: 8px;
-    }
-
-    .testimonial-dot {
-        width: 12px;
-        height: 12px;
-        background-color: var(--white);
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .testimonial-dot:hover {
-        background-color: greenyellow;
+        align-items: start;
+        gap: 7vh;
     }
     
-    .testimonial-dot.active {
+    .testimonial-content {
+        display: flex;
+        position: relative;
+        align-items: center;
+        width: 100%;
+        max-height: 50vh;
+    }
+    
+    .testimonial-quote {
+        width: 100%;
+        display: none;
+        flex-direction: row;
+        align-items: start;
+        gap: 7%;
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        transform: translateY(20px);
+    }
+    
+    .testimonial-quote.active {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        max-height: max-content;
+        padding-left: 10%;
+        padding-right: 10%;
+        transform: translateY(0);
+    }
+
+    .testimonial-text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .testimonial-text blockquote {
+        font-family: var(--font-serif);
+        font-size: 24px;
+        line-height: 1.75;
+        border: none;
+    }
+
+    .testimonial-text cite {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    #references cite h3 {
+        font-weight: 500;
+        text-transform: none;
+        font-size: 16px;
+    }
+
+    #references cite p {
+        color: var(--light-grey);
+        font-size: 16px;
+    }
+    
+    .testimonial-quote img {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+    }
+    
+    .testimonial-navigation {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+        margin: 0 5px;
+        font-family: var(--font-sans);
+        font-size: 16px;
+    }
+
+    .nav-item:hover {
+        opacity: 60%;
+        transition: 0.2s linear;
+    }
+    
+    .nav-item.active {
+        font-weight: bold;
+        color: var(--red);
+    }
+    
+    .divider {
+        display: none;
+        margin: 0 5px;
+        height: 1px;
         background-color: var(--red);
+        width: 64px;
+        transition: display 0.5s ease-in-out;
     }
 
 
@@ -1254,6 +1334,15 @@
 
     /* sections */
 
+    #about {
+        padding: 10%;
+    }
+
+    #education>section {
+        display: grid;
+        grid-template-columns:repeat(3, 1fr);
+    }
+
     .branding img, .branding div {
         max-width: 720px;
     }
@@ -1277,7 +1366,8 @@
     .projects, .case__study {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2%;
+        row-gap: 5%;
+        column-gap: 2%;
     }
 
     .projectpage header h1 {
@@ -1373,18 +1463,6 @@
 
     #skills section {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    #experience, #education, #skills {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
-    .degree div:first-of-type {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
     }
 
     #references h2 {
@@ -1594,9 +1672,9 @@
 /* mobile */
 
 @media (max-width: 768px) {
-    .testimonial-quote {
+    /*.testimonial-quote {
         flex: 0 0.007 100%;
-    }
+    }*/
 
     .projects.block {
         display: block;
