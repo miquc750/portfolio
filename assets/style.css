@@ -135,7 +135,7 @@
         transition: 0.2s linear;
     }
 
-    .nav-top a, .nav-bottom a {
+    .nav-top a, .nav-bottom a, .nav-bottom li {
         font-family: var(--font-serif);
         font-size: var(--font-size);
         font-style: italic;
@@ -176,7 +176,7 @@
         color: var(--red);
     }
 
-    .light-mode a {
+    .light-mode a, .light-mode li {
         font-weight: 600;
     }
 
