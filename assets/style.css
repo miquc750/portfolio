@@ -14,6 +14,7 @@
     --weight-regular: 300;
 }
 
+
 /* mobile-first */
 
     /* text */
@@ -312,6 +313,10 @@
     #play {
         background-color: var(--black);
         padding: 32px 16px 32px 16px;
+    }
+
+    #play h1 {
+        color: var(--white);
     }
 
     #contact {
@@ -942,7 +947,7 @@
             border-bottom-right-radius: 12px;
         }
 
-        #photography .slide:hover {
+        #photography .slide:hover, #filmmaking .slide:hover {
             cursor: pointer;
         }
 
@@ -1002,6 +1007,50 @@
                 color: greenyellow;
                 text-decoration: none;
                 cursor: pointer;
+            }
+
+            /* modal video */
+
+            #videoModal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                padding-top: 60px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.9);
+            }
+            
+            #videoModal .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+            }
+            
+            #videoModal #closeVideo {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #fff;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+            
+            #videoModal #closeVideo:hover,
+            #videoModal #closeVideo:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            
+            #video-frame {
+                width: 100%;
+                height: 400px;
             }
  
 
@@ -1488,7 +1537,7 @@
         min-height: 100%;
     }
 
-        .slide a:hover img, #photography .slide:hover img {
+        .slide a:hover img, #photography .slide:hover img, #filmmaking .slide:hover img {
             transform: scale(1.05);
             transition: 0.5s linear;
         }

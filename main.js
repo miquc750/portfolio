@@ -123,7 +123,7 @@ mobileMenuLinks.forEach(link => {
             observer.observe(section);
         });
     }
-/*});*/
+
 
 // IMG MODAL
 
@@ -142,10 +142,37 @@ images.forEach(image => {
 });
 
 var span = document.getElementById("close");
-
 span.onclick = function() {
     modal.style.display = "none";
 }
+
+
+//VIDEO MODAL
+var videoModal = document.getElementById("videoModal");
+    var slides = document.querySelectorAll('#filmmaking .slide');
+    var videoFrame = document.getElementById("video-frame");
+    var closeVideo = document.getElementById("closeVideo");
+
+    slides.forEach(slide => {
+        slide.addEventListener('click', function() {
+            var videoUrl = this.getAttribute('data-video-url');
+            videoModal.style.display = "block";
+            videoFrame.src = videoUrl;
+        });
+    });
+
+    closeVideo.onclick = function() {
+        videoModal.style.display = "none";
+        videoFrame.src = "";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == videoModal) {
+            videoModal.style.display = "none";
+            videoFrame.src = "";
+        }
+    }
+
 
 
 // SCROLL FUNCTIONALITY FOR DARK SECTIONS
