@@ -46,7 +46,7 @@ mobileMenuLinks.forEach(link => {
                     <div class="project-card">
                         <img src="${project.cover__img}" alt="${project.title}">
                         <section class="project-description">
-                            <h2>${project.title}</h2>
+                            <h3>${project.title}</h3>
                             <p>${project.briefing}</p>
                             <section class="pills">
                                 <div>${project.tag1}</div>

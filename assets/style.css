@@ -27,16 +27,18 @@
         font-weight: calc(var(--weight-regular)*2);
     }
 
-    h1, .projectpage h1 {
+    h1 {
         font-family: var(--font-serif);
-        font-size: calc(var(--font-size)*2.5);
-        padding-bottom: var(--gutter);
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 1.5;
     }
 
     h2 {
         font-family: var(--font-serif);
-        font-size: 48px;
-        padding-bottom: var(--gutter);
+        font-size: 56px;
+        font-weight: 400;
+        line-height: 1.5;
     }
 
         .projectnav h2 {
@@ -44,10 +46,10 @@
         }
 
     h3 {
-        font-family: var(--font-sans);
-        font-weight: 600;
-        font-size: 18px;
-        text-transform: uppercase;
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.2;
     }
 
         .projectcontent h3 {
@@ -57,21 +59,18 @@
             padding-top: 56px;
         }
 
-        #about h3 {
-            color: var(--light-grey);
-            font-weight: 600;
-        }
-
-
     h4 {
         font-family: var(--font-sans);
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16px;
+        text-transform: uppercase;
     }
 
     p, a, time {
         font-family: var(--font-sans);
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.6;
     }
 
     hgroup {
@@ -79,25 +78,16 @@
         flex-direction: column;
     }
 
-    .accordion hgroup {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: var(--gutter);
-    }
-
-    .accordion hgroup div {
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-    }
-
     header h1 {
-        font-family: "Raleway", sans-serif;
+        font-family: var(--font-sans);
         font-weight: 900;
         text-transform: uppercase;
         z-index: 0;
         line-height: 0.6;
+    }
+
+    .projectpage header h1 {
+        font-family: var(--font-serif);
     }
 
     header h1:first-of-type {
@@ -131,7 +121,7 @@
 
     a:hover {
         cursor: pointer;
-        color: greenyellow;
+        color: var(--light-grey);
         transition: 0.2s linear;
     }
 
@@ -146,7 +136,7 @@
         font-family: var(--font-serif);
         font-style: italic;
         padding-bottom: calc(var(--gutter)*2);
-        font-size: var(--font-size);
+        font-size: 24px;
         line-height: 1.5;
     }
 
@@ -190,6 +180,12 @@
         scroll-behavior: smooth;
         overflow-x:hidden;
         background-color: var(--black);
+    }
+
+    #experience, #skills, #references {
+        display: flex;
+        flex-direction: column;
+        gap: 7vh;
     }
 
     .projectcontent>section {
@@ -345,9 +341,11 @@
     #about>section:first-of-type {
         background-color: transparent;
         display: flex;
-        flex-direction: row;
+        /*flex-direction: row;*/
+        flex-direction: column;
         border: none;
-        justify-content: space-between;
+        /*justify-content: space-between;*/
+        gap: 32px;
         padding: 0;
     }
 
@@ -408,7 +406,7 @@
         padding: 40px 16px 40px 16px;
         text-align: center;
         font-family: var(--font-serif);
-        font-size: 22px;
+        font-size: 24px;
         border-top: 1px solid var(--white);
         text-align: left;
     }
@@ -419,6 +417,54 @@
         gap: 32px;
         width: 100%;
     }
+
+    .job {
+        display: flex;
+        flex-direction: column;
+        gap: 5vw;
+    }
+
+    .job hgroup {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--light-grey);
+
+    }
+
+    .job hgroup>div {
+        text-wrap: nowrap;
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+    }
+
+    .job>section {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .job>section>div {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .role {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    .role>p {
+        text-wrap: nowrap;
+    }
+
 
     /* components */
 
@@ -594,8 +640,8 @@
     .degree, blockquote {
         display: flex;
         flex-direction: column;
-        padding-top: calc(var(--gutter)*3);
-        padding-bottom: calc(var(--gutter)*3);
+        padding-top: 20px;
+        padding-bottom: 20px;
         border-top: 1px solid var(--white);
         border-bottom: 1px solid var(--white);
         gap: var(--gutter);
@@ -610,9 +656,9 @@
     }
 
     .role {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        gap: 16px;
+        align-items: center;
+        justify-content: start;
     }
 
     cite {
@@ -647,7 +693,7 @@
         gap: 32px;
     }
 
-        .projects p, .case__study p, .projects .pills, .case__study .pills, #education p, #skills p, #skills h3, #education h3, .panel p, .panel time, .accordion p, .accordion time {
+        .projects .pills, .case__study .pills, #skills h3, #education h3, .panel time, .accordion time, #experience h4, #experience time, #experience h3 {
             font-size: 16px;
         }
 
@@ -1002,7 +1048,7 @@
             
             .close:hover,
             .close:focus {
-                color: greenyellow;
+                color: var(--white);
                 text-decoration: none;
                 cursor: pointer;
             }
@@ -1012,8 +1058,8 @@
             #videoModal {
                 display: none;
                 position: fixed;
-                z-index: 1000;
-                padding-top: 60px;
+                z-index: 10;
+                padding-top: 20vh;
                 left: 0;
                 top: 0;
                 width: 100%;
@@ -1109,8 +1155,6 @@
     /* carousel */
 
     #references {
-        padding-left: 10%;
-        padding-right: 10%;
         display: flex;
         flex-direction: column;
         gap: 5vh;
@@ -1122,7 +1166,8 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        gap: 7vh;
+        max-width: 100%;
+        gap: 3vh;
     }
     
     .testimonial-content {
@@ -1130,7 +1175,6 @@
         position: relative;
         align-items: center;
         width: 100%;
-        max-height: 50vh;
     }
     
     .testimonial-quote {
@@ -1144,11 +1188,9 @@
     }
     
     .testimonial-quote.active {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
+        display: flex;
+        flex-direction: column-reverse;
         max-height: max-content;
-        padding-left: 10%;
-        padding-right: 10%;
         transform: translateY(0);
     }
 
@@ -1156,7 +1198,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 24px;
+        gap: 0;
     }
 
     .testimonial-text blockquote {
@@ -1180,7 +1222,6 @@
 
     #references cite p {
         color: var(--light-grey);
-        font-size: 16px;
     }
     
     .testimonial-quote img {
@@ -1196,6 +1237,9 @@
         flex-direction: row;
         align-items: center;
         gap: 8px;
+        width: 100%;
+        padding-top: 16px;
+        border-top: 1px solid var(--red);
     }
     
     .nav-item {
@@ -1371,6 +1415,24 @@
         grid-template-columns:repeat(3, 1fr);
     }
 
+    #about>section:first-of-type {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .job {
+        flex-direction: row;
+    }
+
+    .job hgroup {
+        flex-direction: column;
+        gap: 8px;
+        justify-content: start;
+        align-items: start;
+        border-bottom: none;
+    }
+
     .branding img, .branding div {
         max-width: 720px;
     }
@@ -1474,6 +1536,11 @@
         padding-top: 5%;
     }
 
+    .degree, blockquote {
+        padding-top: calc(var(--gutter)*3);
+        padding-bottom: calc(var(--gutter)*3);
+    }
+
     .projectpage header {
         gap: 10vh;
     }
@@ -1554,58 +1621,41 @@
         padding-top: 5vh;
     }
 
-    #experience, #skills, #references {
-        display: flex;
-        flex-direction: column;
-        gap: 7vh;
-    }
-
     #education h3 {
         padding-bottom: 5vh;
     }
 
-    #experience p, #experience h4, #experience time, #experience h3 {
-        font-size: 16px;
-    }
-
-    .job {
-        display: flex;
-        flex-direction: row;
-        gap: 5vw;
-    }
-
-    .job hgroup {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .job hgroup>div {
-        text-wrap: nowrap;
-        display: flex;
-        flex-direction: row;
-        gap: 4px;
-    }
-
-    .job>section {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .job>section>div {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .role{
-        display: flex;
-        flex-direction: row;
-        gap: 12px;
-    }
-
     /* components */
+
+    #references {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .testimonial-container {
+        gap: 7vh;
+    }
+    
+    .testimonial-content {
+        max-height: 50vh;
+    }
+    
+    .testimonial-quote.active {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .testimonial-text {
+        gap: 24px;
+    }
+
+    .testimonial-navigation {
+        width: fit-content;
+        padding-top: 0;
+        border-top: none;
+    }
 
     #videoplayer {
         display: flex;
@@ -1697,17 +1747,16 @@
         width: fit-content;
     }
 
-    .nav-top li:hover, .nav-bottom li:hover {
-        background-color: greenyellow;
-        color: var(--black);
-        border: 1px solid var(--black);
+    .nav-top li:hover, .nav-bottom li:hover:not(#credits) {
+        background-color: var(--grey);
         border-radius: 50px;
-        transition: 1s linear;
+        transition: 0.5s linear;
         cursor: pointer;
     }
 
-    .nav-top a:hover, .nav-bottom a:hover {
-        color: var(--black);
+    .nav-top li:hover a, .nav-bottom li:hover a {
+        color: var(--white);
+        font-weight: 400;
     }
 
     .accordion hgroup {
@@ -1720,11 +1769,6 @@
         padding: 32px 96px 32px 32px;
     }
 
-    /*.role {
-        flex-direction: row;
-        gap: 16px;
-    }*/
-
     .close {
         top: 32px;
         right: 64px;
@@ -1735,9 +1779,6 @@
 /* mobile */
 
 @media (max-width: 768px) {
-    /*.testimonial-quote {
-        flex: 0 0.007 100%;
-    }*/
 
     .projects.block {
         display: block;

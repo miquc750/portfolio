@@ -9,7 +9,7 @@
             "briefing": "A platform for basketball coaches to manage their teams based on data.",
             "date": "Jan — Apr 2024",
             "cover__img": "/assets/koach/koach-cover.png",
-            "url":"koach"
+            "url":"koach.html"
         },
         {
             "title": "Gastronomika",
@@ -20,7 +20,7 @@
             "briefing": "Gastronomic experiences gifting platform for foodies.",
             "date": "May — Jul 2022",
             "cover__img": "/assets/gastronomika/gastronomika-cover.gif",
-            "url":"gastronomika"
+            "url":"gastronomika.html"
         },
         {
             "title": "Speedety",
@@ -31,7 +31,7 @@
             "briefing": "A rental service crafted for all-time car lovers who want to stop watching and start driving.",
             "date": "Oct 2023",
             "cover__img": "/assets/speedety/Speedety-cover.png",
-            "url":"speedety"
+            "url":"speedety.html"
         }
     ],
     "project": [
@@ -44,7 +44,7 @@
             "briefing": "Social feature to diminish the time to choose a content to watch on Netflix.",
             "date": "May — Jun 2022",
             "cover__img": "/assets/netflix/netflix-cover.gif",
-            "url":"airbnb"
+            "url":"netflix-community.html"
         },
         {
             "title": "Ghop",
@@ -55,7 +55,7 @@
             "briefing": "Mobile app for autonomous, personnel-free, automatic stores.",
             "date": "May — Jun 2023",
             "cover__img": "/assets/ghop/ghop-cover.png",
-            "url":"airbnb"
+            "url":"ghop.html"
         },
         {
             "title": "Tabty",
@@ -66,7 +66,7 @@
             "briefing": "A game app designed to anticipate the detection of Parkinson Disease.",
             "date": "Sep — Dec 2023",
             "cover__img": "/assets/tabty/tabty-cover.png",
-            "url":"tabty"
+            "url":"tabty.html"
         },
         {
             "title": "Zara Boost",
@@ -77,7 +77,7 @@
             "briefing": "An employer branding campaign to attract junior developers.",
             "date": "May — Aug 2021",
             "cover__img": "/assets/zara/zara-cover.png",
-            "url":"zara-boost"
+            "url":"zara-boost.html"
         },
         {
             "title": "Nomadlandia",
@@ -88,7 +88,7 @@
             "briefing": "A site to attract digital nomads to Spain, by locals, making them feel home from day one.",
             "date": "Mar — Apr 2024",
             "cover__img": "/assets/nomadlandia/nomadlandia-cover.gif",
-            "url":"nomadlandia"
+            "url":"nomadlandia.html"
         },
         {
             "title": "Spotify Connect",
@@ -99,7 +99,7 @@
             "briefing": "A waterproof speaker designed to innovate shower listening experience.",
             "date": "Mar — Apr 2022",
             "cover__img": "/assets/spotify-connect/spotify-connect-cover.png",
-            "url":"spotify-connect"
+            "url":"spotify-connect.html"
         },        
         {
             "title": "Airbnb Trips",
@@ -110,7 +110,7 @@
             "briefing": "Organize your trips, end-to-end, in Airbnb.",
             "date": "Nov — Dec 2023",
             "cover__img": "/assets/airbnb/airbnb-cover.png",
-            "url":"airbnb"
+            "url":"airbnb.html"
         },
         {
             "title": "Imagenation",
@@ -121,7 +121,7 @@
             "briefing": "Gen AI applied to content creation for paid media campaigns.",
             "date": "Jan — May 2024",
             "cover__img": "/assets/imagenation/imagenation-cover.png",
-            "url":"imagenation"
+            "url":"imagenation.html"
         },
         {
             "title": "TutorOrial",
@@ -132,7 +132,7 @@
             "briefing": "Private tutoring platform's onboarding process.",
             "date": "Sep 2023",
             "cover__img": "/assets/tutororial/tutororial-cover.png",
-            "url":"airbnb"
+            "url":"airbnb.html"
         }
     ]
 }
