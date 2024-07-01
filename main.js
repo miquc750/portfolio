@@ -289,32 +289,51 @@ for (var i = 0; i < acc.length; i++) {
 
 
  // CAROUSEL FUNCTIONALITY
- const carouselImages = document.querySelectorAll('.carousel-images img');
- const prevButton = document.querySelector('.prev');
- const nextButton = document.querySelector('.next');
- let currentIndex = 0;
+ const carousel = document.querySelector('.carousel');
+    const images = document.querySelectorAll('.carousel-images img');
+    const totalImages = images.length;
+    let currentIndex = 0;
 
- function showImage(index) {
-     carouselImages.forEach((img, i) => {
-         img.style.display = i === index ? 'block' : 'none';
-     });
- }
+    const showImage = (index) => {
+        images.forEach((img, i) => {
+            img.style.display = i === index ? 'block' : 'none';
+        });
+        updateIndicators(index);
+    };
 
- function showNextImage() {
-     currentIndex = (currentIndex + 1) % carouselImages.length;
-     showImage(currentIndex);
- }
+    const updateIndicators = (index) => {
+        const dots = document.querySelectorAll('.carousel-indicators .dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    };
 
- function showPrevImage() {
-     currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
-     showImage(currentIndex);
- }
+    const nextImage = () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+    };
 
- nextButton.addEventListener('click', showNextImage);
- prevButton.addEventListener('click', showPrevImage);
+    const prevImage = () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+    };
 
- showImage(currentIndex);
+    document.querySelector('.next').addEventListener('click', nextImage);
+    document.querySelector('.prev').addEventListener('click', prevImage);
 
+    // Auto-slide every 5 seconds
+    setInterval(nextImage, 5000);
+
+    // Indicators click event
+    document.querySelectorAll('.carousel-indicators .dot').forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            showImage(index);
+        });
+    });
+
+    // Initial display
+    showImage(currentIndex);
 
 // INTERSECTION OBSERVER FOR NAVIGATION
 function updateNav() {

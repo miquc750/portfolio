@@ -45,6 +45,13 @@
             display: none;
         }
 
+        .projectnav p {
+            text-wrap: wrap;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--white);
+        }
+
     h3 {
         font-family: var(--font-serif);
         font-weight: 400;
@@ -142,6 +149,7 @@
 
     p.highlight {
         font-size: 42px;
+        font-family: var(--font-serif);
         padding-top: 56px;
         padding-bottom: 56px;
         font-weight: 300;
@@ -182,10 +190,17 @@
         background-color: var(--black);
     }
 
-    #experience, #skills, #references {
+    #experience, #skills {
         display: flex;
         flex-direction: column;
         gap: 7vh;
+    }
+
+    #references {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
     }
 
     .projectcontent>section {
@@ -244,10 +259,10 @@
     }
 
     .projectpage .navicon a {
-        min-width: 56px;
-        width: 56px;
-        max-width: 56px;
-        height: 56px;
+        min-width: 64px;
+        width: 64px;
+        max-width: 64px;
+        height: 64px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -279,14 +294,14 @@
     #about {
         background-color: var(--red);
         color: var(--black);
-        padding: 72px 16px 72px 16px;
+        padding: 10% 0 0 0;
         /*background-image: url('/assets/dots.png') ;*/
         background-repeat: repeat;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 5vh;
+        gap: 10vh;
     }
 
     #work {
@@ -315,6 +330,14 @@
         color: var(--white);
     }
 
+    .pill {
+        padding: 4px 12px 4px 12px;
+        border: 1px solid var(--light-grey);
+        width: fit-content;
+        border-radius: 50px;
+        margin-top: 8px;
+    }
+
     #contact {
     background-color: var(--black);
     color: var(--white);
@@ -328,7 +351,7 @@
     padding-left: 16px;
     }
 
-    #about>section {
+    .cv {
         background-color: var(--white);
         display: flex;
         flex-direction: column;
@@ -338,13 +361,16 @@
         padding: 10%;
     }
 
+    #about>section:first-of-type, .cv {
+        display: flex;
+        flex-direction: column;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
     #about>section:first-of-type {
         background-color: transparent;
-        display: flex;
-        /*flex-direction: row;*/
-        flex-direction: column;
         border: none;
-        /*justify-content: space-between;*/
         gap: 32px;
         padding: 0;
     }
@@ -785,6 +811,7 @@
     }
 
     .projectnav {
+        max-width: 15%;
         width: 15%;
         position: fixed;
         padding: 5% 16px 5% 16px;
@@ -819,7 +846,7 @@
         .projectcontent > section {
             display: flex;
             flex-direction: column;
-            gap: 5vh;
+            gap: 10vh;
             align-items: center;
         }
 
@@ -900,12 +927,12 @@
         }
 
     .branding div {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr, 1fr;
     }
 
     .branding div img {
-        max-width: 50%;
+        min-width: 100%;
         object-fit: cover;
     }
 
@@ -1100,25 +1127,20 @@
 
         /* carousel */
 
-        .carousel-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
         .carousel {
             position: relative;
             overflow: hidden;
             width: 100%;
             border-radius: 32px;
+            min-height: fit-content;
+            display: flex;
+            flex-direction: column;
         }
         
         .carousel-images {
             display: flex;
             width: 100%; 
-            height: 100%;
+            max-height: max-content;
             transition: transform 0.5s ease;
         }
         
@@ -1126,31 +1148,34 @@
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 1s ease;
         }
         
         .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--red);
             border-radius: 100px;
             border: none;
             cursor: pointer;
             z-index: 2;
-            height: 32px;
-            width: 32px;
+            height: 24px;
+            width: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .prev {
-            left: var(--gutter);
+            margin-right: 16px;
         }
         
         .next {
-            right: var(--gutter);
+            margin-left: 16px;
         }
+
+        .dot {
+            color: var(--white);
+        }
+
+
 
     /* carousel */
 
@@ -1160,6 +1185,9 @@
         gap: 5vh;
         align-items: start;
         transition: linear 0.5s ease-in-out;
+        background-color: var(--white);
+        width: 100%;
+        padding: 0 10% 0 10%;
     }
 
     .testimonial-container {
@@ -1201,13 +1229,6 @@
         gap: 0;
     }
 
-    .testimonial-text blockquote {
-        font-family: var(--font-serif);
-        font-size: 24px;
-        line-height: 1.75;
-        border: none;
-    }
-
     .testimonial-text cite {
         display: flex;
         flex-direction: column;
@@ -1231,7 +1252,7 @@
         object-fit: cover;
     }
     
-    .testimonial-navigation {
+    .testimonial-navigation, .carousel-indicators {
         margin-top: 20px;
         display: flex;
         flex-direction: row;
@@ -1242,19 +1263,19 @@
         border-top: 1px solid var(--red);
     }
     
-    .nav-item {
+    .nav-item, .carousel-indicators .dot {
         cursor: pointer;
         margin: 0 5px;
         font-family: var(--font-sans);
         font-size: 16px;
     }
 
-    .nav-item:hover {
+    .nav-item:hover, .carousel-indicators .dot:hover {
         opacity: 60%;
         transition: 0.2s linear;
     }
     
-    .nav-item.active {
+    .nav-item.active, .carousel-indicators .dot.active {
         font-weight: bold;
         color: var(--red);
     }
@@ -1340,9 +1361,16 @@
         font-size: 11.9vw;
     }
 
-    p.highlight {
+    p.highlight, .testimonial-text blockquote  {
+        font-family: var(--font-serif);
+        line-height: 1.5;
+        border: none;
         font-size: 48px;
         font-weight: 300;
+    }
+
+    p.highlight {
+        max-width: 50%;
         height: 80vh;
         display: flex;
         justify-content: center;
@@ -1356,6 +1384,7 @@
     #contact p.highlight {
         padding-top: 24px;
         height: fit-content;
+        min-width: fit-content;
     }
 
     #contact .highlight {
@@ -1406,19 +1435,23 @@
 
     /* sections */
 
-    #about {
-        padding: 10%;
-    }
-
     #education>section {
         display: grid;
         grid-template-columns:repeat(3, 1fr);
     }
 
     #about>section:first-of-type {
+        display: flex;
         flex-direction: row;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
+    }
+
+    #about>section:first-of-type, .cv {
+        margin-left: 10%;
+        margin-right: 10%;
+        max-width: 80%;
     }
 
     .job {
@@ -1433,8 +1466,19 @@
         border-bottom: none;
     }
 
-    .branding img, .branding div {
-        max-width: 720px;
+    .branding img {
+        max-width: 100%;
+    }
+
+    .branding div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .branding div img {
+        min-width: 50%;
+        width: 50%;
+        max-width: 50%;
     }
 
     main.assets {
@@ -1465,7 +1509,7 @@
     }
 
     .projectpage header .tldr, .projectpage header img {
-        padding: 0 10% 0 10%;
+        padding: 3vh 10% 0 10%;
     }
     
     .nav-top, .nav-bottom {
@@ -1500,7 +1544,6 @@
     }
 
     .projectnav {
-        min-width: max-content;
         text-wrap: nowrap;
         top: 56px;
         height: 100vh;
@@ -1542,7 +1585,8 @@
     }
 
     .projectpage header {
-        gap: 10vh;
+        padding-top: 10vh;
+        gap: 20vh;
     }
 
     .social-links {
@@ -1565,12 +1609,17 @@
     }
 
     .projectpage footer {
-        padding-left: 0;
-        padding-right: 0;
+        border-top: none;
+        padding-left: 10%;
+        padding-right: 10%;
         margin-top: 25vh;
         margin-left: 0;
         margin-right: 0;
         padding-top: 25vh;
+        display: flex;
+        flex-direction: column;
+        gap: 96px;
+        padding-bottom: 96px;
     }
 
     .projectpage #contact {
@@ -1627,17 +1676,12 @@
 
     /* components */
 
-    #references {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
     .testimonial-container {
         gap: 7vh;
     }
     
     .testimonial-content {
-        max-height: 50vh;
+        min-height: max-content;
     }
     
     .testimonial-quote.active {
@@ -1691,8 +1735,9 @@
 
     .carousel {
         width: 60vw;
-        height: 40vw;
-        border-radius: 32px;
+        min-height: fit-content;
+        border-radius: 0;
+        margin-bottom: 56px;
     }
 
     .carousel-images {
@@ -1704,7 +1749,7 @@
         max-width: 60vw;
         width: 60vw;
         object-fit: contain;
-        height: 40vw;
+        height: auto;
     }
 
     .navlogo {
@@ -1728,14 +1773,13 @@
     }
 
     .top:hover {
-        background-color: var(--red);
-        transform: scale(1.1);
+        background-color: var(--grey);
+        transition: 0.5s linear;
     }
 
     .top {
         right: 5%;
         bottom: 56px;
-        background-color: var(--white);
         color: var(--black);
     }
     
