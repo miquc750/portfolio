@@ -62,41 +62,68 @@ mobileMenuLinks.forEach(link => {
 
         // REVIEWS CAROUSEL
         const quotes = document.querySelectorAll('.testimonial-quote');
-    const navItems = document.querySelectorAll('.nav-item');
-    const dividers = document.querySelectorAll('.divider');
+        const navItems = document.querySelectorAll('.nav-item');
+        const dividers = document.querySelectorAll('.divider');
 
-    function updateDividers(index) {
-        // Oculta todos los divisores
-        dividers.forEach(divider => divider.style.display = 'none');
+        function updateDividers(index) {
+            // Oculta todos los divisores
+            dividers.forEach(divider => divider.style.display = 'none');
 
-        // Muestra los divisores según el índice activo
-        if (index > 1 && index <= dividers.length + 1) {
-            dividers[index - 2].style.display = 'block';
+            // Muestra los divisores según el índice activo
+            if (index > 1 && index <= dividers.length + 1) {
+                dividers[index - 2].style.display = 'block';
+            }
+            if (index > 1 && index < dividers.length + 1) {
+                dividers[index - 1].style.display = 'block';
+            }
         }
-        if (index > 1 && index < dividers.length + 1) {
-            dividers[index - 1].style.display = 'block';
-        }
-    }
 
-    navItems.forEach(item => {
-        item.addEventListener('click', function () {
-            const index = this.getAttribute('data-index');
+        navItems.forEach(item => {
+            item.addEventListener('click', function () {
+                const index = this.getAttribute('data-index');
 
-            // Remove active class from all quotes and nav items
-            quotes.forEach(quote => quote.classList.remove('active'));
-            navItems.forEach(nav => nav.classList.remove('active'));
+                // Remove active class from all quotes and nav items
+                quotes.forEach(quote => quote.classList.remove('active'));
+                navItems.forEach(nav => nav.classList.remove('active'));
 
-            // Add active class to the selected quote and nav item
-            quotes[index - 1].classList.add('active');
-            this.classList.add('active');
+                // Add active class to the selected quote and nav item
+                quotes[index - 1].classList.add('active');
+                this.classList.add('active');
 
-            // Update dividers
-            updateDividers(Number(index));
+                // Update dividers
+                updateDividers(Number(index));
+            });
         });
-    });
 
-    // Initialize dividers on page load
-    updateDividers(1);
+        // Initialize dividers on page load
+        updateDividers(1);
+
+        // Testimonial Carousel Auto-Slide
+        let testimonialIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial-quote');
+        const totalTestimonials = testimonials.length;
+        const testimonialNavItems = document.querySelectorAll('.nav-item');
+
+        const showTestimonial = (index) => {
+            testimonials.forEach((quote, i) => {
+                quote.classList.toggle('active', i === index);
+                testimonialNavItems.forEach((nav, j) => {
+                    nav.classList.toggle('active', j === index);
+                });
+            });
+            updateDividers(index + 1);
+        };
+
+        const nextTestimonial = () => {
+            testimonialIndex = (testimonialIndex + 1) % totalTestimonials;
+            showTestimonial(testimonialIndex);
+        };
+
+        // Auto-slide testimonials every 7 seconds
+        setInterval(nextTestimonial, 7000);
+
+        // Initialize first testimonial display
+        showTestimonial(testimonialIndex);
 
 
 // INITIATE INTERSECTION OBSERVER
@@ -145,6 +172,13 @@ var span = document.getElementById("close");
 span.onclick = function() {
     modal.style.display = "none";
 }
+
+// Cierra el modal al clicar en cualquier parte fuera de la imagen
+modal.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+});
 
 
 //VIDEO MODAL

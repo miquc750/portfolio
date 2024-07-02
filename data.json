@@ -21,10 +21,12 @@
             "date": "May — Jul 2022",
             "cover__img": "/assets/gastronomika/gastronomika-cover.gif",
             "url":"gastronomika.html"
-        },
+        }     
+    ],
+    "project": [
         {
             "title": "Speedety",
-            "type": "case-study",
+            "type": "project",
             "tag1": "branding",
             "tag2": "UI",
             "tag3": "A/B Testing",
@@ -32,63 +34,6 @@
             "date": "Oct 2023",
             "cover__img": "/assets/speedety/Speedety-cover.png",
             "url":"speedety.html"
-        }
-    ],
-    "project": [
-        {
-            "title": "Netflix Community",
-            "type": "project",
-            "tag1": "UX",
-            "tag2": "research",
-            "tag3": null,
-            "briefing": "Social feature to diminish the time to choose a content to watch on Netflix.",
-            "date": "May — Jun 2022",
-            "cover__img": "/assets/netflix/netflix-cover.gif",
-            "url":"netflix-community.html"
-        },
-        {
-            "title": "Ghop",
-            "type": "project",
-            "tag1": "UX",
-            "tag2": "design system",
-            "tag3": null,
-            "briefing": "Mobile app for autonomous, personnel-free, automatic stores.",
-            "date": "May — Jun 2023",
-            "cover__img": "/assets/ghop/ghop-cover.png",
-            "url":"ghop.html"
-        },
-        {
-            "title": "Tabty",
-            "type": "project",
-            "tag1": "product management",
-            "tag2": "research",
-            "tag3": null,
-            "briefing": "A game app designed to anticipate the detection of Parkinson Disease.",
-            "date": "Sep — Dec 2023",
-            "cover__img": "/assets/tabty/tabty-cover.png",
-            "url":"tabty.html"
-        },
-        {
-            "title": "Zara Boost",
-            "type": "project",
-            "tag1": "marketing",
-            "tag2": "UX",
-            "tag3": null,
-            "briefing": "An employer branding campaign to attract junior developers.",
-            "date": "May — Aug 2021",
-            "cover__img": "/assets/zara/zara-cover.jpg",
-            "url":"zara-boost.html"
-        },
-        {
-            "title": "Nomadlandia",
-            "type": "project",
-            "tag1": "coding",
-            "tag2": "branding",
-            "tag3": "micro-interactions",
-            "briefing": "A site to attract digital nomads to Spain, by locals, making them feel home from day one.",
-            "date": "Mar — Apr 2024",
-            "cover__img": "/assets/nomadlandia/nomadlandia-cover.gif",
-            "url":"nomadlandia.html"
         },
         {
             "title": "Spotify Connect",
@@ -100,39 +45,6 @@
             "date": "Mar — Apr 2022",
             "cover__img": "/assets/spotify-connect/spotify-connect-cover.png",
             "url":"spotify-connect.html"
-        },        
-        {
-            "title": "Airbnb Trips",
-            "type": "project",
-            "tag1": "product management",
-            "tag2": "UX",
-            "tag3": null,
-            "briefing": "Organize your trips, end-to-end, in Airbnb.",
-            "date": "Nov — Dec 2023",
-            "cover__img": "/assets/airbnb/airbnb-cover.png",
-            "url":"airbnb.html"
-        },
-        {
-            "title": "Imagenation",
-            "type": "project",
-            "tag1": "product management",
-            "tag2": "branding",
-            "tag3": null,
-            "briefing": "Gen AI applied to content creation for paid media campaigns.",
-            "date": "Jan — May 2024",
-            "cover__img": "/assets/imagenation/imagenation-cover.png",
-            "url":"imagenation.html"
-        },
-        {
-            "title": "TutorOrial",
-            "type": "project",
-            "tag1": "UX/UI",
-            "tag2": "research",
-            "tag3": null,
-            "briefing": "Private tutoring platform's onboarding process.",
-            "date": "Sep 2023",
-            "cover__img": "/assets/tutororial/tutororial-cover.png",
-            "url":"airbnb.html"
         }
     ]
 }
