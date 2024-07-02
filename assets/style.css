@@ -226,7 +226,7 @@
     .projectpage .nav-top {
         position: fixed;
         top: 0;
-        padding: 32px 0 32px 0;
+        padding: 20px 0 20px 0;
         min-width: 92%;
         max-width: 100%;
         display: flex;
@@ -361,7 +361,6 @@
         flex-direction: column;
         width: 100%;
         gap: 20vh;
-        border-radius: 20px;
     }
 
     #about>section:first-of-type, .cv {
@@ -769,7 +768,6 @@
         min-height: 100%;
         max-height: max-content;
         height: fit-content;
-        border-radius: 0px;
         overflow: hidden;
     }
 
@@ -807,7 +805,6 @@
 
     .pills div {
         padding: 12px 24px 12px 24px;
-        border-radius: 0px;
         font-family: var(--font-sans);
         background-color: var(--white);
         text-wrap: nowrap;
@@ -892,18 +889,26 @@
             align-items: center;
         }
 
-        .projectcontent ol {
-            padding-left: 29px;
+        .projectcontent ol, .projectcontent ul {
+            padding-left: 32px;
             display: flex;
             flex-direction: column;
-            gap: var(--gutter);
+            gap: 16px;
         }
 
-        .projectcontent li {
+        .projectcontent ol li, .projectcontent ul li {
             font-family: var(--font-sans);
-            font-size: 18px;
+            font-size: 16px;
+            line-height: 1.5;
             font-weight: 300;
+        }
+
+        .projectcontent ol li {
             list-style-type:decimal-leading-zero;
+        }
+
+        .projectcontent ul li {
+            list-style-type: square;
         }
 
     .projectexplanation {
@@ -924,7 +929,7 @@
 
     .projectcontent>section img {
         width: 100%;
-        border-radius: 8px;
+        overflow: hidden;
     }
 
     .top {
@@ -1146,7 +1151,6 @@
             position: relative;
             overflow: hidden;
             width: 100%;
-            border-radius: 32px;
             min-height: fit-content;
             display: flex;
             flex-direction: column;
@@ -1167,7 +1171,6 @@
         }
         
         .prev, .next {
-            border-radius: 100px;
             border: none;
             cursor: pointer;
             z-index: 2;
@@ -1564,12 +1567,12 @@
 
     .projectnav {
         text-wrap: nowrap;
-        top: 56px;
+        top: 10vh;
         height: 100vh;
         flex-direction: column;
         justify-content: start;
         padding-left: 0;
-        gap: 16px;
+        gap: 8px;
         max-width: 15vw;
         position: sticky;
     }
@@ -1736,13 +1739,12 @@
 
     .projectcontent>section img {
         width: 100%;
-        border-radius: 20px;
+        overflow: hidden;
     }
 
     .carousel {
         width: 60vw;
         min-height: fit-content;
-        border-radius: 0;
         margin-bottom: 56px;
     }
 
