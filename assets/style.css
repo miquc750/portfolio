@@ -42,7 +42,7 @@
         line-height: 1.5;
     }
 
-        .projectnav h2 {
+        .projectnav h2, .projectnav li:nth-of-type(2) {
             display: none;
         }
 
@@ -150,8 +150,9 @@
         line-height: 1.5;
     }
 
-    p.highlight {
-        font-size: 42px;
+    p.highlight, .testimonial-text blockquote {
+        font-size: 32px;
+        line-height: 1.5;
         font-family: var(--font-serif);
         padding-top: 56px;
         padding-bottom: 56px;
@@ -199,14 +200,6 @@
         gap: 7vh;
     }
 
-    #references {
-        padding: 10% 0 10% 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: max-content;
-    }
-
     .projectcontent>section {
         scroll-margin-top: 10ex;
     }
@@ -226,7 +219,7 @@
     .projectpage .nav-top {
         position: fixed;
         top: 0;
-        padding: 20px 0 20px 0;
+        padding: 16px 0 16px 0;
         min-width: 92%;
         max-width: 100%;
         display: flex;
@@ -304,14 +297,23 @@
     #about {
         background-color: var(--background-grey);
         color: var(--black);
+        padding: 10% 16px 0 16px;
         padding: 10% 0 0 0;
-        /*background-image: url('/assets/dots.png') ;*/
         background-repeat: repeat;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10vh;
+    }
+
+    #about h1 {
+        text-align: center;
+    }
+
+    #experience, #education, #skills {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     #work {
@@ -333,7 +335,7 @@
 
     #play {
         background-color: var(--background-grey);
-        padding: 32px 16px 32px 16px;
+        padding: 96px 16px 96px 16px;
     }
 
     .pill {
@@ -452,6 +454,10 @@
         gap: 3vw;
     }
 
+    .job:first-of-type {
+        margin-bottom: 32px;
+    }
+
     .job hgroup {
         display: flex;
         flex-direction: row;
@@ -471,26 +477,18 @@
 
     .job>section {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 56px;
     }
 
     .job>section:first-of-type>div {
         display: flex;
         flex-direction: column;
-        max-width: 33%;
-        gap: 12px;
     }
 
     .start {
         display: flex;
-        flex-direction: row;
-        gap: 12px;
-        padding-top: 96px;
-    }
-
-    .start div {
-        width: 25%;
+        flex-direction: column;
     }
 
     .start .role {
@@ -508,9 +506,14 @@
 
     /* components */
 
+    .projects.block {
+        display: block;
+    }
+
         /*mobile menu*/
 
         .menu-toggle {
+            display: block;
             cursor: pointer;
             background: none;
             border: none;
@@ -521,7 +524,7 @@
             background-color: var(--red);
             border-radius: 8px;
             border: 1px solid var(--black);
-            z-index: 6;
+            z-index: 10;
         }
 
         .menu-toggle span {
@@ -530,7 +533,7 @@
             height: 2px;
             background-color: var(--black);
             margin: 5px 0;
-            z-index: 6;
+            z-index: 10;
         }
 
         .projectpage .nav-top {
@@ -542,13 +545,13 @@
             position: fixed;
             inset: 0;
             width: 100%;
-            background-color: var(--red);
+            background-color: var(--black);
         }
 
         .mobile-menu.open, .projectpage .mobile-menu.open {
             display: block;
             overflow-y: scroll;
-            z-index: 5;
+            z-index: 4;
             height: 100vh;
         }
         
@@ -568,35 +571,15 @@
         .mobile-menu a, .projectpage .mobile-menu a {
             font-family: var(--font-serif);
             font-size: 56px;
-            color: var(--black);
+            color: var(--white);
         }
         
         .mobile-menu ul li:last-child {
             border-bottom: none;
         }
 
-        .mobile-menu .accordion, .projectpage .mobile-menu .accordion {
-            border: none;
-            padding: 0;
-            color: var(--black);
-        }
-
         .projectpage ul .panel {
             padding-top: 0;
-        }
-
-        .mobile-menu .accordion img {
-            filter: brightness(0%);
-        }
-
-        .mobile-menu .panel a {
-            padding: 0;
-            font-size: 32px;
-        }
-
-        .mobile-menu .panel {
-            border-top: 1px solid var(--black);
-            padding: 0 0 0 32px;
         }
 
 
@@ -607,6 +590,7 @@
     }
 
     .nav-top.light-mode div, .nav-bottom.light-mode div {
+        display: none;
         background-color: var(--white);
         height: 1px;
         width: 100%;
@@ -713,7 +697,6 @@
         border-radius: 50px;
         color: var(--white);
         background-color: var(--black);
-        width: 100%;
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -721,6 +704,7 @@
         max-height: fit-content;
         min-height: fit-content;
         height: fit-content;
+        width: 92vw;
     }
 
     .a-button p {
@@ -850,8 +834,6 @@
     }
 
     .projectnav {
-        max-width: 15%;
-        width: 15%;
         position: fixed;
         padding: 5% 16px 5% 16px;
         bottom: 0px;
@@ -999,19 +981,16 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             column-gap: 16px;
             row-gap: 16px;
             width: 100%;
-        }
-
-        #filmmaking .gallery {
-            grid-template-columns: repeat(1, 1fr);
         }
         
         .slide {
             display: flex;
             height: fit-content;
+            min-height: 100%;
             flex-direction: column;
             overflow: hidden;
         }
@@ -1024,12 +1003,13 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            height: fit-content;
         }
 
         .slide img, .slide a img {
             object-fit: cover;
-            min-height: 22vh;
+            min-height: 75vw;
+            height: 75vw;
+            /*min-height: 22vh;*/
             border: 12px solid var(--white);
         }
         
@@ -1045,8 +1025,9 @@
             border-left: 12px solid var(--white);
             border-right: 12px solid var(--white);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             gap: 8px;
             height: 100%;
             min-height: 100%;
@@ -1198,14 +1179,16 @@
     /* carousel */
 
     #references {
+        align-items: start;
+        background-color: var(--white);
         display: flex;
         flex-direction: column;
         gap: 5vh;
-        align-items: start;
+        justify-content: center;
+        min-height: max-content;
+        padding: 64px 16px 64px 16px;
         transition: linear 0.5s ease-in-out;
-        background-color: var(--white);
         width: 100%;
-        padding: 10%;
     }
 
     .testimonial-container {
@@ -1328,7 +1311,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--black);
+        background-color: var(--white);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1340,7 +1323,8 @@
 
     .logo {
         font-weight: 300;
-        background-color: var(--red);
+        background-color: var(--black);
+        color: var(--red);
         border: none;
         height: 72px;
         width: 72px;
@@ -1385,8 +1369,9 @@
         font-family: var(--font-serif);
         line-height: 1.5;
         border: none;
-        font-size: 48px;
+        font-size: 38px;
         font-weight: 300;
+        padding: 0;
     }
 
     p.highlight {
@@ -1399,6 +1384,10 @@
 
     #about p.highlight {
         padding: 10%;
+    }
+
+    #about h1 {
+        text-align: left;
     }
 
     #contact p.highlight {
@@ -1428,9 +1417,11 @@
         padding-bottom: 0;
     }
 
-    .projectnav h2 {
+    .projectnav h2, .projectnav li:nth-of-type(2) {
         display:block;
     }
+
+    
 
     .projectexplanation h2 {
         padding-left: 0;
@@ -1455,6 +1446,12 @@
 
     /* sections */
 
+    .projectpage {
+        padding-top: 5%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     #education>section {
         display: grid;
         grid-template-columns:repeat(3, 1fr);
@@ -1476,7 +1473,13 @@
 
     .job {
         flex-direction: row;
+        padding-bottom: 64px;
     }
+
+    .job:first-of-type {
+        margin-bottom: 0;
+    }
+
 
     .job hgroup {
         flex-direction: column;
@@ -1486,6 +1489,24 @@
         border-bottom: none;
         padding-right: 4vw;
         border-right: 1px solid var(--light-grey);
+    }
+
+    .job>section {
+        flex-direction: row;
+    }
+
+    .job>section:first-of-type>div {
+        max-width: 33%;
+        gap: 12px;
+    }
+
+    .start {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .start div {
+        width: 25%;
     }
 
     .branding img {
@@ -1504,7 +1525,8 @@
     }
 
     main.assets {
-        padding: 5% 10% 0 10%;
+        padding: 5% 5% 0 5%;
+        gap: 72px;
     }
 
     #home header {
@@ -1513,6 +1535,11 @@
 
     #work {
         padding: 10%;
+    }
+
+    #experience, #education, #skills {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     #play {
@@ -1527,11 +1554,12 @@
     }
 
     .projectpage header h1 {
-        padding: 5% 10% 0 10%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .projectpage header .tldr, .projectpage header img:not(.projectbadge) {
-        padding: 3vh 10% 0 10%;
+        padding: 5% 5% 0 5%;
     }
     
     .nav-top, .nav-bottom {
@@ -1555,19 +1583,25 @@
 
     .nav-top {
         position: fixed;
-        top: 24px;
+        top: 8px;
+        /*
+        top: 24px;*/
     }
 
     .nav-bottom {
         position: fixed;
-        bottom: 24px;
+        bottom: 8px;
+        /*bottom: 24px;*/
         display: flex;
         flex-direction: row;
     }
 
     .projectnav {
+        max-width: 15%;
+        width: 15%;
+        min-width: min-content;
         text-wrap: nowrap;
-        top: 10vh;
+        top: 6vh;
         height: 100vh;
         flex-direction: column;
         justify-content: start;
@@ -1653,6 +1687,13 @@
         gap: 20vh;
     }
 
+    #references {
+        padding-left: 10%; 
+        padding-right: 10%;
+        min-height: fit-content;
+        gap: 3vh;
+    }
+
     .gallery, #filmmaking .gallery {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 2vw;
@@ -1684,8 +1725,13 @@
 
     /* components */
 
+    .slide figcaption {
+        flex-direction: column;
+        align-items: start;
+    }
+
     .testimonial-container {
-        gap: 7vh;
+        gap: 2vh;
     }
     
     .testimonial-content {
@@ -1695,8 +1741,8 @@
     .testimonial-quote.active {
         display: grid;
         grid-template-columns: 3fr 1fr;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
         min-height: max-content;
     }
 
@@ -1770,8 +1816,8 @@
 
     .projectpage .nav-top {
         width: 100%;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
         background-color: var(--black);
     }
 
@@ -1786,8 +1832,9 @@
     }
 
     .top {
-        right: 5%;
-        bottom: 56px;
+        position: fixed;
+        right: 2vw;
+        bottom: 2vw;
         color: var(--black);
     }
     
@@ -1815,6 +1862,10 @@
         color: var(--white);
     }
 
+    .nav-top.light-mode div, .nav-bottom.light-mode div {
+        display: block;
+    }
+
     .accordion hgroup {
         display: flex;
         flex-direction: row;
@@ -1831,12 +1882,60 @@
     }
 }
 
+/* mid-sized */
 
-/* mobile */
+@media (min-width: 1440px) {
 
-@media (max-width: 768px) {
+    .nav-top {
+        top: 24px;
+    }
 
-    .projects.block {
-        display: block;
+    .nav-bottom {
+        bottom: 24px;
+    }
+
+    p.highlight, .testimonial-text blockquote  {
+        font-size: 48px;
+    }
+
+    #references {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
+
+    .testimonial-container {
+        gap: 5vh;
+    }
+
+    .testimonial-quote.active {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .projectpage .nav-top {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .projectpage header h1 {
+        padding: 5% 10% 0 10%;
+    }
+
+    .projectpage header .tldr, .projectpage header img:not(.projectbadge) {
+        padding: 3vh 10% 0 10%;
+    }
+
+    .projectnav {
+        top: 5vh;
+    }
+
+    .projectpage .assets {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .top {
+        right: 5vh;
+        bottom: 5vh;
     }
 }
