@@ -44,6 +44,7 @@
 
         .projectnav h2, .projectnav li:nth-of-type(2) {
             display: none;
+            line-height: 1.1;
         }
 
         .projectnav p {
@@ -234,8 +235,15 @@
 
     .projectpage .nav-top a {
         color: var(--white);
-
     }
+
+    .projectcontent a {
+        display: inline;
+        color: var(--red);
+        font-weight: 600;
+    }
+
+    .projectexplanation a:hover {color: var(--light-grey);}
 
 
     .nav-top, .nav-bottom {

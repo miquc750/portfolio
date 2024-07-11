@@ -12,6 +12,17 @@
             "url":"koach.html"
         },
         {
+            "title": "Netflix Community",
+            "type": "case-study",
+            "tag1": "UX",
+            "tag2": "research",
+            "tag3": null,
+            "briefing": "Social feature to diminish the time to choose a content to watch on Netflix.",
+            "date": "May — Jun 2022",
+            "cover__img": "/assets/netflix/netflix-cover.gif",
+            "url":"netflix-community.html"
+        },   
+        {
             "title": "Gastronomika",
             "type": "project",
             "tag1": "UX/UI",
