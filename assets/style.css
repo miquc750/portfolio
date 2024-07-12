@@ -901,6 +901,13 @@
             list-style-type: square;
         }
 
+        .projectcontent div {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+        }
+
     .projectexplanation {
         display: flex;
         flex-direction: column;
@@ -1940,6 +1947,10 @@
     .projectpage .assets {
         padding-left: 10%;
         padding-right: 10%;
+    }
+
+    .projectcontent>section {
+        gap: 15vh;
     }
 
     .top {
