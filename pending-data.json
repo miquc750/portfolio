@@ -1,17 +1,6 @@
 {
     "project": [
         {
-            "title": "Speedety",
-            "type": "project",
-            "tag1": "branding",
-            "tag2": "UI",
-            "tag3": "A/B Testing",
-            "briefing": "A rental service crafted for all-time car lovers who want to stop watching and start driving.",
-            "date": "Oct 2023",
-            "cover__img": "/assets/speedety/Speedety-cover.png",
-            "url":"speedety.html"
-        },
-        {
             "title": "Tabty",
             "type": "project",
             "tag1": "product management",

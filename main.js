@@ -67,10 +67,8 @@ mobileMenuLinks.forEach(link => {
         const dividers = document.querySelectorAll('.divider');
 
         function updateDividers(index) {
-            // Oculta todos los divisores
             dividers.forEach(divider => divider.style.display = 'none');
 
-            // Muestra los divisores según el índice activo
             if (index > 1 && index <= dividers.length + 1) {
                 dividers[index - 2].style.display = 'block';
             }
@@ -83,15 +81,12 @@ mobileMenuLinks.forEach(link => {
             item.addEventListener('click', function () {
                 const index = this.getAttribute('data-index');
 
-                // Remove active class from all quotes and nav items
                 quotes.forEach(quote => quote.classList.remove('active'));
                 navItems.forEach(nav => nav.classList.remove('active'));
 
-                // Add active class to the selected quote and nav item
                 quotes[index - 1].classList.add('active');
                 this.classList.add('active');
 
-                // Update dividers
                 updateDividers(Number(index));
             });
         });

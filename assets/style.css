@@ -47,6 +47,10 @@
             line-height: 1.1;
         }
 
+        .projectnav h2 {
+            padding-bottom: 8px;
+        }
+
         .projectnav p {
             text-wrap: wrap;
             padding-bottom: 24px;
@@ -776,7 +780,7 @@
     .project-description {
         display: flex;
         flex-direction: column;
-        gap: calc(var(--gutter)*3);
+        gap: 16px;
         padding: 24px;
         min-height: fit-content;
     }
@@ -1564,8 +1568,12 @@
     .projects, .case__study {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        row-gap: 32px;
-        column-gap: 32px;
+        row-gap: 16px;
+        column-gap: 16px;
+    }
+
+    .project-description {
+        gap: 12px;
     }
 
     .projectpage header h1 {
@@ -1746,18 +1754,16 @@
     }
 
     .testimonial-container {
-        gap: 2vh;
+        gap: 0;
     }
     
     .testimonial-content {
-        min-height: 500px;
+        min-height: 400px;
     }
     
     .testimonial-quote.active {
         display: grid;
         grid-template-columns: 3fr 1fr;
-        padding-left: 5%;
-        padding-right: 5%;
         min-height: max-content;
     }
 
@@ -1925,6 +1931,15 @@
     .testimonial-quote.active {
         padding-left: 10%;
         padding-right: 10%;
+    }
+
+    .projects, .case__study {
+        row-gap: 32px;
+        column-gap: 32px;
+    }
+
+    .project-description {
+        gap: 20px;
     }
 
     .projectpage .nav-top {
